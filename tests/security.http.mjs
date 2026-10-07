@@ -80,7 +80,6 @@ for (const path of [
   "/projects",
   "/contact",
   "/images/portraits/homepage.jpeg",
-  "/Kasra_Janesar_CV_2026.docx",
   "/missing-security-check",
 ]) {
   test(`security headers and expected status: ${path}`, async () => {
@@ -125,6 +124,8 @@ for (const path of [
   "/src/app/layout.tsx",
   "/resume.pdf",
   "/Kasra_Janesar_CV.docx",
+  "/Kasra_Janesar_CV_2026.docx",
+  "/archive/cv/Kasra_Janesar_CV_2026.docx",
   "/images/cv/page-1.png",
   "/images/cv/page-2.png",
   "/archive/cv/resume.pdf",

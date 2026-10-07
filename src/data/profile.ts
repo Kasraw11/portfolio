@@ -5,7 +5,6 @@ export const profile: Profile = {
   name: "Kasra",
   role: "IT Student & Software Developer",
   location: "Melbourne, Australia",
-  resumeUrl: "/Kasra_Janesar_CV_2026.docx",
   homePhotoUrl: "/images/portraits/homepage.jpeg",
   aboutPhotoUrl: "/images/portraits/about.jpeg",
   introduction: "Full-stack development with a cloud focus.",

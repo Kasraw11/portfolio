@@ -37,7 +37,6 @@ export interface Profile {
   name: string;
   role: string;
   location: string;
-  resumeUrl?: string;
   homePhotoUrl?: string;
   aboutPhotoUrl?: string;
   introduction: string;

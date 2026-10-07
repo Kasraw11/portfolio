@@ -108,7 +108,7 @@ About uses a sticky 280px profile rail from 1000px and a stacked profile on smal
 
 Projects displays PathFolio, Auditrax, FaunaLens / Aussie EcoLens, and SmartLoop first. SmartLoop is a Vue 3/Firebase sustainability application with confirmed contribution details. Native disclosures explain individual contributions. PathFolio has a confirmed stack but no supplied public URL. Auditrax and FaunaLens link to the CV-provided demos. Online Course Registration, Android Calculator, and Food Ordering System Design follow the newer projects. Cards have no date/year labels. No invented results or screenshots. Contact has one minimal heading, a prominent email panel with mailto and copy actions, LinkedIn/GitHub cards, and a separate link to the About CV section. Copy reports success or a manual-copy fallback.
 
-The CV starts collapsed at the bottom of About. It opens a responsive, accessible text version of the latest document with owner-requested terminology and section updates, with a separate Download CV (.docx) action. The download is the unchanged source document; its coursework line is omitted from the website preview per owner preference. Old PDF/page assets are retained but no longer referenced. Home/navigation contain no CV download.
+The CV starts collapsed at the bottom of About. Its expanded view uses a distinct name/contact header, full-width section dividers, grouped education/work/project entries, aligned dates, semantic responsibility lists, and labelled skill/language rows. Dividers use existing line tokens; typography and spacing establish hierarchy without extra cards. On mobile, dates and skill values stack beneath their labels. It opens a responsive, accessible text version of the latest document with owner-requested terminology and section updates, without a download action. The source document is preserved in archive/cv outside the public web root; its coursework line is omitted from the website preview per owner preference. Old PDF/page assets are retained but no longer referenced. Home/navigation contain no CV download.
 
 ## Motion and accessibility
 
@@ -116,7 +116,7 @@ Identity, hero details, and the About introduction settle by 8px over 480ms; det
 
 ## Maintenance
 
-Buttons and text actions use labels without decorative arrows. Linked social cards retain their external-link affordance. Contact no longer includes the CV promotion/link; CV viewing and downloading live on About.
+Buttons and text actions use labels without decorative arrows. Linked social cards retain their external-link affordance. Contact no longer includes the CV promotion/link; CV viewing lives on About; downloads are removed.
 
 Project card actions read "Project details"; expanded disclosures retain "Hide details". The hero navigation CTA remains "View Projects".
 
@@ -142,4 +142,4 @@ Light-mode active navigation uses a muted navy (#203e66) pill with white text th
 
 Navbar glass uses 64% charcoal fill in dark and 62% white fill in light, with 28px blur and 125% saturation. Active links use a subtle glass sheen: neutral gray in dark, translucent navy in light. Dark hero text stays strictly grayscale.
 
-CV viewing controls share a pill-shaped neon orbit border with a four-second rotation and soft static halo. The cv-fill/cv-text/cv-orbit-color/cv-orbit-trail/cv-halo tokens keep the dark version charcoal and silver, and the light version navy with a blue highlight. The homepage Contact me action reuses the orbit with its existing accent color (navy in light, silver in dark) and transparent fill. Reduced motion leaves a static highlight; forced colors removes the decorative ring and uses system button colors. Download remains a separate secondary action.
+CV viewing controls share a pill-shaped neon orbit border with a four-second rotation and soft static halo. The cv-fill/cv-text/cv-orbit-color/cv-orbit-trail/cv-halo tokens keep the dark version charcoal and silver, and the light version navy with a blue highlight. The homepage Contact me action reuses the orbit with its existing accent color (navy in light, silver in dark) and transparent fill. Reduced motion leaves a static highlight; forced colors removes the decorative ring and uses system button colors. No CV download action is shown.

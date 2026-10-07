@@ -5,7 +5,7 @@ A responsive Next.js App Router, TypeScript, Node.js, and Tailwind CSS portfolio
 ## Pages
 
 - Home: portrait hero, short About and skills highlights, featured PathFolio, LinkedIn and email.
-- About: profile, experience timeline, education, visible Technical Skills and Soft Skills cards, separate Other Tools section, separate certificates, languages, and interests disclosures, collapsed CV preview and original Word download.
+- About: profile, experience timeline, education, visible Technical Skills and Soft Skills cards, separate Other Tools section, separate certificates, languages, and interests disclosures, collapsed CV preview without a download action.
 - Projects: PathFolio, Auditrax, and FaunaLens / Aussie EcoLens first, followed by Online Course Registration, Android Calculator, and Food Ordering System Design. No year labels on cards.
 - Contact: minimal title and introduction, prominent email panel with send/copy actions, LinkedIn/GitHub cards, and an About CV link. Copy success and clipboard-denied feedback are accessible.
 
@@ -15,4 +15,4 @@ Dena Laboratory employment ended February 2025. Monash is the current degree. Fa
 
 ## Behavior and limits
 
-Dark defaults on first visit; the toggle persists theme locally. Portraits are independently configured. CV is initially collapsed, viewable as HTML text, and downloadable as the original DOCX from About only. Native project/background disclosures work without client state. No database, authentication, CMS, contact backend, or deployment is configured. Retain responsive behavior, reduced-motion/transparency, and forced-color support.
+Dark defaults on first visit; the toggle persists theme locally. Portraits are independently configured. CV is initially collapsed and viewable as HTML text on About. Document downloads are removed, and source files are preserved outside the public web root. Native project/background disclosures work without client state. No database, authentication, CMS, contact backend, or deployment is configured. Retain responsive behavior, reduced-motion/transparency, and forced-color support.
