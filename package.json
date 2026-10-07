@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:security": "npm run build && node --test tests/security.http.mjs",
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

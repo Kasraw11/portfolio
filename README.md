@@ -27,7 +27,7 @@ Open http://localhost:3000. On PowerShell, use npm.cmd to avoid script execution
 - public/images/portraits/homepage.jpeg and about.jpeg: supplied photos, framed through CSS.
 - tests/theme.test.mjs: theme persistence and fallback tests.
 
-The latest source is Kasra_Janesar_CV_2026.docx. It supplies Monash education, updated employment dates, confirmed project contributions/technologies, and the LinkedIn URL. Supporting tools, certificates, and interests are retained from the earlier CV. The old PDF and rendered page assets remain unused. Do not reintroduce stale PDF text when updating the current document.
+The latest source is Kasra_Janesar_CV_2026.docx. It supplies Monash education, updated employment dates, confirmed project contributions/technologies, and the LinkedIn URL. Supporting tools, certificates, and interests are retained from the earlier CV. Older CV documents and page images are preserved in archive/cv, outside the public web root. Do not reintroduce stale PDF text when updating the current document.
 
 ## Design
 
@@ -42,7 +42,13 @@ npm.cmd run build
 npm.cmd run lint
 npm.cmd run format:check
 npm.cmd test
+npm.cmd run test:security
+npm.cmd audit --omit=dev
 ```
+
+The security test builds the app, starts a temporary production server on loopback, and checks response headers, private-file exposure, basic injection payloads, and image URL restrictions. Production hosting must redirect HTTP to HTTPS; verify TLS and these headers again on the deployed domain. The CSP permits inline scripts for static Next.js hydration, so it does not fully prevent inline script injection. The current CV download is intentionally public. Files in archive are not served by Next.js, but remain visible to anyone with repository access.
+
+Security review (7 October 2026): the production dependency audit reported zero vulnerabilities. The full audit reported five high-severity package entries from one unpatched development-only braces advisory, [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm), through eslint-config-next. No website request input reaches this linting chain in the current source. Run lint only against trusted project configuration and revisit the advisory before future deployments. Do not force npm's suggested downgrade to Next.js 14 tooling.
 
 ## Next refinements
 
