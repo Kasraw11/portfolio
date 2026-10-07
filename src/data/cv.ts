@@ -1,0 +1,97 @@
+// Website CV adapted from Kasra_Janesar_CV_2026.docx; coursework is omitted per owner preference.
+export const cvSections = [
+  {
+    title: "Kasra Janesar",
+    paragraphs: [
+      "SOFTWARE DEVELOPMENT  |  FULL-STACK   |  CLOUD TECHNOLOGIES",
+      "Melbourne, Australia  •  kasrajanesar@gmail.com GitHub: github.com/Kasraw11",
+      "LinkedIn: linkedin.com/in/kasra-janesar-253630376",
+    ],
+  },
+  {
+    title: "Profile",
+    paragraphs: [
+      "Master of Information Technology student at Monash University with experience in full-stack development, frontend design, system architecture and design, data analytics, and cloud technologies. Strong problem-solving skills with an interest in building practical technical solutions. Seeking opportunities in DevOps or software engineering.",
+    ],
+  },
+  {
+    title: "Education",
+    paragraphs: [
+      "Master of Information Technology Feb 2025 - Dec 2026",
+      "Monash University  •  Melbourne, Australia",
+      "Capstone project: PathFolio - career guidance and planning for young Australians.",
+      "Bachelor of Computer Engineering",
+      "Specialized in software engineering 2017 - 2022",
+      "Islamic Azad University  •  Shiraz, Iran",
+    ],
+  },
+  {
+    title: "Technical skills",
+    paragraphs: [
+      "Programming: Python, JavaScript, TypeScript, C#, Java, R, C++",
+      "Frontend: React, Next.js, Vue.js, HTML, CSS",
+      "Backend and APIs: FastAPI, REST APIs, C# Web API",
+      "Databases: PostgreSQL, Microsoft SQL Server, MySQL",
+      "Cloud: AWS ,Google Cloud Platform",
+      "Development tools: Git, GitHub, Vercel",
+    ],
+  },
+  {
+    title: "Work experience",
+    paragraphs: [
+      "IT Specialist  |  Dena Laboratory",
+      "Yasuj, Iran Jan 2023 - Feb 2025",
+      "• Contributed to an online patient laboratory-results portal using C#, web APIs, Microsoft SQL Server and React as part of a development team.",
+      "• Supported users after rollout, troubleshooting application issues and resolving day-to-day operational requests.",
+      "• Provided hardware and software support, maintained the website and assisted end users.",
+      "IT Department Intern  |  Shiraz University of Medical Sciences",
+      "Shiraz, Iran Jun - Sep 2022",
+      "• Contributed to a web-based course registration system using C#, web APIs, Microsoft SQL Server and React.",
+      "• Assisted with internal network administration and supported students during course registration.",
+      "IT Support Intern  |  Dena Laboratory",
+      "Yasuj, Iran Jul - Oct 2021",
+      "• Assisted with computer maintenance, website updates and routine IT troubleshooting.",
+      "• Worked alongside the IT team to learn the organisation's systems and internal network operations.",
+    ],
+  },
+  {
+    title: "Projects",
+    paragraphs: [
+      "PathFolio  |  Career navigation platform 2026",
+      "Next.js, TypeScript, Python, FastAPI",
+      "• Contributed to system Architecture design and developed frontend interfaces and backend services for career exploration and planning for young people in Australia.",
+      "• Built career-forecasting functionality and personalised roadmap logic using labour-market indicators, user skills, education and career goals.",
+      "Auditrax  |  AI-assisted compliance platform 2026",
+      "JavaScript, TypeScript, CSS, Python",
+      "• Contributed to system architecture, frontend design and backend development for an ISO 27001 audit-readiness platform.",
+      "• Designed workflows for centralised compliance evidence, control mapping and identifying audit-readiness gaps.",
+      "• Built interface and application components in a JavaScript and TypeScript codebase.",
+      "FaunaLens / Aussie EcoLens  |  Wildlife AI Assisted observation platform 2026",
+      "Next.js, TypeScript, AWS S3, Amazon Cognito, GCP fauna-lens.vercel.app/login",
+      "• Developed frontend features for media management, the image library, uploads, notifications and settings.",
+      "• Integrated Amazon Cognito authentication and implemented secure browser-to-S3 uploads.",
+      "• Tested interfaces and integrated frontend flows with a team-built serverless AWS/GCP species-detection pipeline.",
+      "SmartLoop| Sustainability Web Application 2026",
+      "Vue.js 3, JavaScript, Firebase, Cloud Firestore, Cloud Functions, Bootstrap",
+      "• Developed a sustainability platform to help users find recycling, reuse and repair services and discover community events.",
+      "• Implemented responsive interfaces, authentication, role-based access, routing, form validation, user/admin dashboards, event registration and ratings.",
+      "• Integrated Cloud Firestore and Firebase Cloud Functions to support database operations and server-side functionality.",
+      "Online Course Selection and Registration  |  React.js",
+      "Developed a web application for students to select and manage courses, with admin tools for managing courses and students.",
+      "Android Calculator  |  Java",
+      "Built an Android application to perform basic mathematical calculations.",
+      "Online Food Ordering System Design| Rational Rose",
+      "• Analysed and designed an online food ordering system, documenting system structure, workflows, and interactions using UML diagrams in Rational Rose.",
+    ],
+  },
+  {
+    title: "Soft skills",
+    paragraphs: [
+      "Problem solving  •  Analytical thinking  •  Teamwork • Adaptability  •  Initiative  •  Attention to detail",
+    ],
+  },
+  {
+    title: "Languages",
+    paragraphs: ["English  IELTS Overall 7 •  Persian (native)"],
+  },
+] as const;

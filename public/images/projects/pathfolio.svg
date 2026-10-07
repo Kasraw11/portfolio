@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#dce6f2"/>
+<rect x="48" y="42" width="704" height="430" rx="12" fill="#fff"/>
+<path d="M60 42h680a12 12 0 0 1 12 12v30H48V54a12 12 0 0 1 12-12" fill="#10233a"/>
+<g fill="#6d829d"><circle cx="68" cy="63" r="4"/><circle cx="83" cy="63" r="4"/><circle cx="98" cy="63" r="4"/></g>
+<text x="365" y="68" fill="#c3d0df" font-family="Arial,sans-serif" font-size="11">pathfolio.app</text>
+<path d="M48 84h144v388H60a12 12 0 0 1-12-12" fill="#f0f5fc"/>
+<g font-family="Arial,sans-serif"><text x="68" y="122" font-size="19" font-weight="bold" fill="#153557">PathFolio</text>
+<rect x="60" y="153" width="118" height="32" rx="5" fill="#dce9ff"/>
+<g font-size="11" fill="#566b85"><text x="76" y="174" fill="#255fd4">Overview</text><text x="76" y="211">Explore careers</text><text x="76" y="248">My pathway</text><text x="76" y="285">Saved roles</text></g>
+<text x="222" y="125" font-size="23" font-weight="bold" fill="#152941">Your next chapter.</text><text x="222" y="149" font-size="12" fill="#677a91">Explore possibilities. Find your direction.</text>
+<rect x="222" y="173" width="242" height="108" rx="7" fill="#eaf2ff"/><text x="239" y="198" font-size="11" fill="#4670a6">YOUR PATHWAY</text><text x="239" y="225" font-size="18" fill="#173553" font-weight="bold">Software development</text><text x="239" y="252" font-size="11" fill="#547493">Explore roles and learning resources</text>
+<rect x="482" y="173" width="240" height="108" rx="7" fill="#f3f6fa"/><text x="500" y="198" font-size="11" fill="#667a93">SAVED OPPORTUNITIES</text><text x="500" y="235" font-size="29" fill="#244b79">12</text><text x="545" y="234" font-size="12" fill="#667a93">roles to explore</text>
+<text x="222" y="316" font-size="15" font-weight="bold" fill="#173553">Recommended next steps</text>
+<g fill="#f5f7fb"><rect x="222" y="333" width="500" height="43" rx="5"/><rect x="222" y="388" width="500" height="43" rx="5"/></g>
+<g fill="#3679dc"><circle cx="246" cy="354" r="6"/><circle cx="246" cy="409" r="6"/></g><g fill="#516681" font-size="12"><text x="267" y="359">Build your first full-stack application</text><text x="267" y="414">Explore cloud fundamentals</text></g></g>
+</svg>

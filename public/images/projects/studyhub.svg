@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#dbe3ef"/>
+<rect x="48" y="42" width="704" height="430" rx="12" fill="#fff"/>
+<path d="M60 42h680a12 12 0 0 1 12 12v30H48V54a12 12 0 0 1 12-12" fill="#152c47"/>
+<g fill="#6d829d"><circle cx="68" cy="63" r="4"/><circle cx="83" cy="63" r="4"/><circle cx="98" cy="63" r="4"/></g>
+<text x="365" y="68" fill="#c3d0df" font-family="Arial,sans-serif" font-size="11">studyhub.app</text>
+<path d="M48 84h142v388H60a12 12 0 0 1-12-12" fill="#f2f5fa"/>
+<g font-family="Arial,sans-serif"><text x="66" y="121" font-size="20" font-weight="bold" fill="#24497c">StudyHub</text>
+<rect x="59" y="153" width="118" height="32" rx="5" fill="#e0eaff"/>
+<g font-size="11" fill="#677991"><text x="73" y="174" fill="#2962cf">My workspace</text><text x="73" y="211">Subjects</text><text x="73" y="248">Resources</text><text x="73" y="285">Study groups</text></g>
+<text x="220" y="126" font-size="22" font-weight="bold" fill="#18304f">Make room for learning.</text><text x="220" y="150" font-size="12" fill="#6a7c92">Your subjects, resources, and people. Together.</text>
+<g><rect x="220" y="180" width="153" height="106" rx="7" fill="#e9f1ff"/><rect x="386" y="180" width="153" height="106" rx="7" fill="#edf4f6"/><rect x="552" y="180" width="171" height="106" rx="7" fill="#eef0f8"/></g>
+<g font-size="11" fill="#54718e"><text x="235" y="205">COMPUTER SCIENCE</text><text x="402" y="205">DATA & SYSTEMS</text><text x="568" y="205">GROUP PROJECT</text></g>
+<g font-size="15" fill="#29486e" font-weight="bold"><text x="235" y="237">Algorithms</text><text x="402" y="237">Databases</text><text x="568" y="237">Web development</text></g>
+<g font-size="10" fill="#67829c"><text x="235" y="264">8 resources</text><text x="402" y="264">12 resources</text><text x="568" y="264">4 collaborators</text></g>
+<text x="220" y="320" font-size="15" font-weight="bold" fill="#29486e">Coming up this week</text>
+<g stroke="#e0e6ee" fill="none"><path d="M220 369h503M220 419h503"/><rect x="224" y="341" width="14" height="14" rx="3"/><rect x="224" y="389" width="14" height="14" rx="3"/></g>
+<g font-size="12" fill="#5c718b"><text x="252" y="353">Review database design notes</text><text x="252" y="401">Meet with the project team</text></g>
+<g font-size="10" fill="#2962cf"><text x="668" y="353">MON</text><text x="668" y="401">WED</text></g></g>
+</svg>

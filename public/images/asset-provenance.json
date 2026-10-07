@@ -1,0 +1,29 @@
+{
+  "method": "Built-in image_gen tool",
+  "hero": [
+    {
+      "file": "hero/workspace-dark.png",
+      "kind": "AI-generated workspace photograph",
+      "prompt": "Create one photorealistic premium editorial photograph for a software developer's portfolio hero. Landscape 3:2. A modern graphite laptop open at a natural three-quarter angle on a tidy dark navy desk, filling most of the frame. The laptop screen clearly displays a realistic dark code editor with TypeScript/React source code and a file sidebar, fine multicolored syntax, not logos or big readable copy. Camera at seated desk height, whole laptop visible. Restrained blue evening window light, soft warm desk lamp in the distant upper right, a plain dark ceramic mug near the edge. Background dark navy #08111F, desk #0D1B2A. Natural realistic materials, credible keyboard and screen geometry, subtle photographic depth of field, sophisticated quiet mood. No people, no buildings, no floating technology logos, no neon, no oversized glow, no purple, no text overlays, no watermarks. This is a photo asset only, not a website screenshot or mockup."
+    },
+    {
+      "file": "hero/workspace-light.png",
+      "kind": "AI-generated workspace photograph",
+      "prompt": "Create one photorealistic premium editorial photograph for a software developer's portfolio hero. Landscape 3:2. A modern silver laptop open at a natural three-quarter angle on a tidy pale blue-gray desk, filling most of the frame. The laptop screen clearly displays a realistic dark code editor with TypeScript/React source code and a file sidebar, fine multicolored syntax, not logos or big readable copy. Camera at seated desk height, whole laptop visible. Bright soft daylight through a diffuse window, a small softly blurred green plant to the back left and a plain ceramic mug near the edge. Background near white #F8FAFC, gentle blue-gray shadows. Natural realistic materials, credible keyboard and screen geometry, subtle photographic depth of field, clean professional atmosphere. No people, no buildings, no floating technology logos, no neon, no oversized glow, no purple, no text overlays, no watermarks. This is a photo asset only, not a website screenshot or mockup."
+    }
+  ],
+  "projects": [
+    {
+      "file": "projects/pathfolio.svg",
+      "kind": "Authored vector UI concept preview; not an actual project screenshot"
+    },
+    {
+      "file": "projects/escape.svg",
+      "kind": "Authored vector UI concept preview; not an actual project screenshot"
+    },
+    {
+      "file": "projects/studyhub.svg",
+      "kind": "Authored vector UI concept preview; not an actual project screenshot"
+    }
+  ]
+}
