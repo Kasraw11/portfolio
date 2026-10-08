@@ -3,6 +3,7 @@ import type { Profile } from "@/types/portfolio";
 // Education, experience, and email are sourced from the supplied CV.
 export const profile: Profile = {
   name: "Kasra",
+  fullName: "Kasra Janesar",
   role: "IT Student & Software Developer",
   location: "Melbourne, Australia",
   homePhotoUrl: "/images/portraits/homepage.jpeg",

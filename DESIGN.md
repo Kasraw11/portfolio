@@ -102,7 +102,7 @@ src/app/globals.css owns theme variables. The frontmatter mirrors the core palet
 
 ## Layout and content
 
-Four routes share a floating navigation capsule and footer. Home has identity/actions, a central portrait, and a minimal right column showing only the role; below are brief About/skill highlights, featured PathFolio, and working LinkedIn/email cards. The hero stacks below 640px, uses two columns from 640px, and three from 1100px. HomePhotoUrl and aboutPhotoUrl configure independent supplied portraits. Home display crop is scale 1.5 around 60%/68% with a bottom fade; About is scale 1.35 around 44%/42%. Originals are unchanged.
+Four routes share a floating navigation capsule and footer. Home opens with a small greeting, the full name Kasra Janesar, and the role directly beneath it, followed by location and View Projects / Contact me actions. Identity and the portrait use two columns from 700px and stack below that. Selected projects follow immediately: a full-width PathFolio feature with its contribution, then smaller Aussie EcoLens and Auditrax text previews side by side from 768px. About and compact skill highlights follow the work. Contact icons appear only in the minimal footer; Home has no duplicate social row or contact cards. Project previews are text-only, with no image slots or placeholders. HomePhotoUrl and aboutPhotoUrl configure independent supplied portraits. Home display crop remains scale 1.5 around 60%/68% with a bottom fade; About remains scale 1.35 around 44%/42%. Originals are unchanged.
 
 About uses a sticky 280px profile rail from 1000px and a stacked profile on smaller screens. The main column has the biography, three-role experience timeline, both degrees. Technical Skills and Soft Skills occupy two gradient cards from 700px and stack below that; all six owner-selected soft skills stay visible. Other Tools is its own section. Certificates, Languages, and Interests each have their own native disclosure. Sports include football, table tennis, badminton, and tennis. There is no Courses section. Older supporting tools, certificates, and personal interests remain from the earlier supplied CV; old reference details are not displayed.
 
@@ -136,7 +136,7 @@ Project ownership is explicit: PathFolio, Auditrax, and FaunaLens are group proj
 
 Hero name and role use a shared hero-text-gradient: deep navy to muted blue in light mode, and a neutral white-to-gray gradient in dark mode. Only these two text elements receive the effect; the greeting, supporting copy, and dark background remain unchanged. Forced colors restores solid text.
 
-Navigation page links are centered using equal flexible side columns on desktop, with the theme toggle at right. Mobile menu/theme controls and expanded links are centered. The hero role uses balanced line wrapping, weight 550, a 1.65rem-to-2.125rem scale, 1.18 line height, and -0.03em tracking.
+Navigation page links are centered using equal flexible side columns on desktop, with the theme toggle at right. Mobile menu/theme controls and expanded links are centered. The hero role sits below the full name with balanced line wrapping, weight 500, a 1.25rem-to-1.6rem scale, 1.45 line height, and -0.02em tracking.
 
 Light-mode active navigation uses a muted navy (#203e66) pill with white text through nav-selected tokens. Dark mode keeps its neutral active state. The hero role has no supporting summary beneath it.
 

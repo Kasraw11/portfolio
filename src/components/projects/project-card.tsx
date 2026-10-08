@@ -5,9 +5,11 @@ import type { Project } from "@/types/portfolio";
 export function ProjectCard({
   project,
   featured = false,
+  compact = false,
 }: {
   project: Project;
   featured?: boolean;
+  compact?: boolean;
 }) {
   const projectContext = [
     project.category,
@@ -18,8 +20,12 @@ export function ProjectCard({
 
   if (featured) {
     return (
-      <article id={project.id} className="featured-project">
-        <div>
+      <article
+        id={project.id}
+        className={`featured-project ${compact ? "featured-project-secondary" : "featured-project-lead"}`}
+        data-reveal
+      >
+        <div className="featured-project-copy">
           <p className="project-category">{projectContext}</p>
           <div className="project-title">
             <h3>{project.name}</h3>
@@ -39,9 +45,26 @@ export function ProjectCard({
             </ul>
           )}
         </div>
-        <Link className="text-link" href={`/projects#${project.id}`}>
-          Project details
-        </Link>
+        {!compact && (
+          <div className="featured-project-contribution">
+            <h4>My contribution</h4>
+            <p>{project.contribution}</p>
+          </div>
+        )}
+        <div className="featured-project-actions">
+          <Link
+            className="text-link"
+            href={`/projects#${project.id}`}
+            aria-label={`Project details for ${project.name}`}
+          >
+            Project details
+          </Link>
+          {project.demoUrl && (
+            <a className="text-link" href={project.demoUrl}>
+              Live demo
+            </a>
+          )}
+        </div>
       </article>
     );
   }

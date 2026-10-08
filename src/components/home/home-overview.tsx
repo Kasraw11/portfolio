@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { skillHighlights } from "@/data/skills";
-import { Arrow } from "@/components/ui/arrow";
-import { Icon } from "@/components/ui/icon";
 
 export function HomeOverview() {
   return (
@@ -30,46 +28,6 @@ export function HomeOverview() {
         <Link className="text-link" href="/about#skills">
           My skills
         </Link>
-      </div>
-    </section>
-  );
-}
-
-export function HomeContact() {
-  const contacts = ["LinkedIn", "Email"]
-    .map((label) => profile.contacts.find((contact) => contact.label === label))
-    .filter((contact) => contact !== undefined);
-  return (
-    <section className="home-contact" aria-label="Connect with Kasra">
-      <div className="contact-cards">
-        {contacts.map((contact) => {
-          const content = (
-            <>
-              <Icon name={contact.label === "LinkedIn" ? "linkedin" : "mail"} />
-              <div>
-                <h2>{contact.label}</h2>
-                <p>{contact.value}</p>
-              </div>
-              {contact.href && <Arrow diagonal />}
-            </>
-          );
-          return contact.href ? (
-            <a
-              key={contact.label}
-              className="contact-card contact-card-compact"
-              href={contact.href}
-            >
-              {content}
-            </a>
-          ) : (
-            <div
-              key={contact.label}
-              className="contact-card contact-card-compact contact-card-pending"
-            >
-              {content}
-            </div>
-          );
-        })}
       </div>
     </section>
   );

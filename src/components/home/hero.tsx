@@ -4,10 +4,6 @@ import { profile } from "@/data/profile";
 import { Icon } from "@/components/ui/icon";
 
 export function Hero() {
-  const socialLinks = profile.contacts.filter(
-    (contact) =>
-      contact.href && ["Email", "GitHub", "LinkedIn"].includes(contact.label),
-  );
   return (
     <section
       id="home"
@@ -15,10 +11,13 @@ export function Hero() {
       className="hero hero-portrait-layout"
     >
       <div className="hero-main">
+        <p className="hero-greeting">Hello, I’m</p>
         <h1 id="hero-title">
-          <span className="hero-greeting">Hello, I’m</span>
-          <span className="hero-gradient-text">{profile.name}</span>
+          <span className="hero-gradient-text">{profile.fullName}</span>
         </h1>
+        <p className="hero-role">
+          <span className="hero-gradient-text">{profile.role}</span>
+        </p>
         <p className="hero-location">
           <Icon name="pin" />
           {profile.location}
@@ -31,35 +30,15 @@ export function Hero() {
             Contact me
           </Link>
         </div>
-        <div className="hero-socials" aria-label="Professional contact links">
-          {socialLinks.map((contact) => (
-            <a
-              key={contact.label}
-              href={contact.href}
-              aria-label={contact.label}
-              title={contact.label}
-            >
-              <Icon
-                name={
-                  contact.label === "GitHub"
-                    ? "github"
-                    : contact.label === "LinkedIn"
-                      ? "linkedin"
-                      : "mail"
-                }
-              />
-            </a>
-          ))}
-        </div>
       </div>
       <div className="hero-portrait-stage">
         <div className="hero-portrait">
           {profile.homePhotoUrl ? (
             <Image
               src={profile.homePhotoUrl}
-              alt={"Portrait of " + profile.name}
+              alt={"Portrait of " + profile.fullName}
               fill
-              sizes="(min-width: 1100px) 360px, (min-width: 640px) 45vw, 280px"
+              sizes="(min-width: 1100px) 340px, (min-width: 700px) 36vw, 280px"
               preload
               className="hero-portrait-photo"
             />
@@ -81,11 +60,6 @@ export function Hero() {
             </div>
           )}
         </div>
-      </div>
-      <div className="hero-details">
-        <p className="hero-role">
-          <span className="hero-gradient-text">{profile.role}</span>
-        </p>
       </div>
     </section>
   );

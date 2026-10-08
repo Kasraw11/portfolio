@@ -4,7 +4,7 @@ A responsive Next.js App Router, TypeScript, Node.js, and Tailwind CSS portfolio
 
 ## Pages
 
-- Home: portrait hero, short About and skills highlights, featured PathFolio, LinkedIn and email.
+- Home: full-name portrait hero with role beneath the name, selected PathFolio / Aussie EcoLens / Auditrax text previews, then short About and skills highlights. Contact me stays in the hero; contact icons stay in the minimal footer.
 - About: profile, experience timeline, education, visible Technical Skills and Soft Skills cards, separate Other Tools section, separate certificates, languages, and interests disclosures, collapsed CV preview without a download action.
 - Projects: PathFolio, Auditrax, and FaunaLens / Aussie EcoLens first, followed by Online Course Registration, Android Calculator, and Food Ordering System Design. No year labels on cards.
 - Contact: minimal title and introduction, prominent email panel with send/copy actions, LinkedIn/GitHub cards, and an About CV link. Copy success and clipboard-denied feedback are accessible.

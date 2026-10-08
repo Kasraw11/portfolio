@@ -35,6 +35,7 @@ export interface ContactLink {
 
 export interface Profile {
   name: string;
+  fullName: string;
   role: string;
   location: string;
   homePhotoUrl?: string;

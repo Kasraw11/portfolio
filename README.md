@@ -59,3 +59,5 @@ Homepage skillHighlights are maintained independently from the full About skillG
 Project cards show a short summary directly below the title, followed by technology tags. View project opens separate About the project and My contribution sections from the overview and contribution data fields; the control changes to Hide details. Newest projects remain first, without year labels.
 
 The footer displays only copyright and accessible email, LinkedIn, and GitHub icons. The root template provides route transitions; PageContent progressively enhances marked cards with one-time viewport reveals. Reduced-motion settings and no-JavaScript rendering keep content immediately usable.
+
+Home introduces Kasra Janesar with the role directly below the name. Selected projects come next: a prominent PathFolio feature, then smaller Aussie EcoLens and Auditrax text previews. About and skills follow. The hero Contact me action and minimal footer replace the previous repeated social row and contact cards.
