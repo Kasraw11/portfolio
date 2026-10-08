@@ -1789,23 +1789,38 @@ a.contact-card:hover {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  padding-block: 24px;
+  margin-top: 40px;
+  padding-block: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  gap: 8px 20px;
+  justify-content: space-between;
+  gap: 16px;
   color: var(--muted);
   font-size: 12px;
 }
-.site-footer a {
-  min-height: 44px;
+.footer-socials {
+  display: flex;
+  gap: 4px;
+}
+.footer-socials a {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition:
+    color var(--motion-fast),
+    background-color var(--motion-fast);
 }
-.site-footer a:hover {
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
   color: var(--foreground);
+  background: var(--glass-selected);
+}
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
 }
 .skip-link {
   position: fixed;
@@ -1983,12 +1998,63 @@ a.contact-card:hover {
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .page-intro,
-  .contact-destinations {
+  .page-intro {
     animation: settle-in var(--motion-reveal) var(--ease-out) both;
   }
-  .contact-destinations {
-    animation-delay: 80ms;
+}
+
+/* Route content changes together; the navigation and footer stay steady. */
+.page-content {
+  min-width: 0;
+}
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-group(.page-enter),
+::view-transition-group(.page-exit) {
+  animation-duration: 320ms;
+}
+::view-transition-old(.page-exit) {
+  animation: page-depart 140ms ease-out both;
+}
+::view-transition-new(.page-enter) {
+  animation: page-arrive 320ms var(--ease-out) both;
+}
+@keyframes page-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes page-depart {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@supports not (view-transition-name: none) {
+  @media (prefers-reduced-motion: no-preference) {
+    .page-content {
+      animation: page-arrive 320ms var(--ease-out) both;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 

@@ -46,7 +46,7 @@ export function ProjectCard({
     );
   }
   return (
-    <article id={project.id} className="project-card">
+    <article id={project.id} className="project-card" data-reveal>
       {project.image && (
         <div className="project-image">
           <Image

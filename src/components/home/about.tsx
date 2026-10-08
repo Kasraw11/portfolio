@@ -5,7 +5,7 @@ import { Icon } from "@/components/ui/icon";
 
 export function About() {
   return (
-    <aside className="profile-rail" aria-label="Personal profile">
+    <aside className="profile-rail" aria-label="Personal profile" data-reveal>
       <div className="about-portrait">
         {profile.aboutPhotoUrl ? (
           <Image

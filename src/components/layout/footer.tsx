@@ -1,25 +1,32 @@
 import { profile } from "@/data/profile";
+import { Icon, type IconName } from "@/components/ui/icon";
+
+const contactIcons: Record<string, IconName> = {
+  Email: "mail",
+  LinkedIn: "linkedin",
+  GitHub: "github",
+};
 
 export function Footer() {
   return (
     <footer className="page-width site-footer">
       <p>
-        © {new Date().getFullYear()} {profile.name}. Built with care.
+        © {new Date().getFullYear()} {profile.name}
       </p>
-      <a href="#top">
-        Back to top{" "}
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          aria-hidden="true"
-        >
-          <path d="M12 20V4m-6 6 6-6 6 6" />
-        </svg>
-      </a>
+      <nav aria-label="Contact links" className="footer-socials">
+        {profile.contacts
+          .filter((contact) => contact.href && contactIcons[contact.label])
+          .map((contact) => (
+            <a
+              key={contact.label}
+              href={contact.href}
+              aria-label={contact.label}
+              title={contact.label}
+            >
+              <Icon name={contactIcons[contact.label]} />
+            </a>
+          ))}
+      </nav>
     </footer>
   );
 }

@@ -25,6 +25,7 @@ export function ContactContent() {
         {email && (
           <section
             className="contact-email-panel"
+            data-reveal
             aria-labelledby="email-heading"
           >
             <div className="contact-panel-label">
@@ -65,6 +66,7 @@ export function ContactContent() {
               <a
                 key={contact.label}
                 className="contact-card contact-social-card"
+                data-reveal
                 href={contact.href}
               >
                 {contents}
@@ -73,6 +75,7 @@ export function ContactContent() {
               <div
                 key={contact.label}
                 className="contact-card contact-social-card"
+                data-reveal
               >
                 {contents}
               </div>

@@ -150,7 +150,7 @@ export const cvSections: readonly CvSection[] = [
         title: "FaunaLens / Aussie EcoLens",
         subtitle: "Wildlife AI Assisted observation platform",
         period: "2026",
-        technologies: "Next.js, TypeScript, AWS, GCP",
+        technologies: "Next.js, TypeScript, Python, AWS, GCP",
         bullets: [
           "Developed frontend features for media management, the image library, uploads, notifications and settings.",
           "Integrated authentication and implemented secure media uploads using AWS.",

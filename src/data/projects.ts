@@ -44,7 +44,7 @@ export const projects: readonly Project[] = [
     status: "CV project",
     description:
       "A wildlife observation platform with AI-assisted species detection.",
-    technologies: ["Next.js", "TypeScript", "AWS", "GCP"],
+    technologies: ["Next.js", "TypeScript", "Python", "AWS", "GCP"],
     overview:
       "FaunaLens, also called Aussie EcoLens, connects an image library and media uploads with a team-built species-detection pipeline. The platform includes authentication, media management, notifications, and settings, with frontend flows integrated into serverless AWS and GCP services.",
     contribution:

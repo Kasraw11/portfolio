@@ -57,3 +57,5 @@ Add real project screenshots, a PathFolio public link when available, social met
 Homepage skillHighlights are maintained independently from the full About skillGroups in src/data/skills.ts: Programming (Java, Python), Frontend (JavaScript, Next.js), APIs (FastAPI), Databases (MySQL), Cloud (AWS, GCP).
 
 Project cards show a short summary directly below the title, followed by technology tags. View project opens separate About the project and My contribution sections from the overview and contribution data fields; the control changes to Hide details. Newest projects remain first, without year labels.
+
+The footer displays only copyright and accessible email, LinkedIn, and GitHub icons. The root template provides route transitions; PageContent progressively enhances marked cards with one-time viewport reveals. Reduced-motion settings and no-JavaScript rendering keep content immediately usable.

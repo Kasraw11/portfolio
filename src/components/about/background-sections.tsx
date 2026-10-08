@@ -71,7 +71,7 @@ export function AboutContent() {
         </div>
         <ol className="career-timeline">
           {experience.map((item) => (
-            <li key={item.organisation + item.dates}>
+            <li key={item.organisation + item.dates} data-reveal>
               <p className="career-date">{item.dates}</p>
               <h3>{item.role}</h3>
               <p className="career-organisation">
@@ -91,7 +91,11 @@ export function AboutContent() {
           <h2 id="education-title">Education</h2>
           <div className="education-list">
             {education.map((item) => (
-              <article className="education-primary" key={item.qualification}>
+              <article
+                className="education-primary"
+                key={item.qualification}
+                data-reveal
+              >
                 <p className="career-date">{item.dates}</p>
                 <h3>{item.qualification}</h3>
                 <p>{item.institution}</p>
@@ -104,6 +108,7 @@ export function AboutContent() {
       <div id="skills" className="about-skills-grid">
         <section
           className="about-skill-card"
+          data-reveal
           aria-labelledby="technical-skills-title"
         >
           <h2 id="technical-skills-title">Technical Skills</h2>
@@ -119,6 +124,7 @@ export function AboutContent() {
         <section
           className="about-skill-card"
           aria-labelledby="soft-skills-title"
+          data-reveal
         >
           <h2 id="soft-skills-title">Soft Skills</h2>
           <ul className="soft-skills-list">
