@@ -46,9 +46,17 @@ export function ProjectCard({
           )}
         </div>
         {!compact && (
-          <div className="featured-project-contribution">
-            <h4>My contribution</h4>
-            <p>{project.contribution}</p>
+          <div className="featured-project-details">
+            <section aria-labelledby={`${project.id}-featured-about`}>
+              <h4 id={`${project.id}-featured-about`}>About</h4>
+              <p>{project.overview}</p>
+            </section>
+            <section aria-labelledby={`${project.id}-featured-contribution`}>
+              <h4 id={`${project.id}-featured-contribution`}>
+                My contribution
+              </h4>
+              <p>{project.contribution}</p>
+            </section>
           </div>
         )}
         <div className="featured-project-actions">

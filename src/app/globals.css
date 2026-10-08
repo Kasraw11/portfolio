@@ -414,15 +414,20 @@ section.selected-projects {
   gap: 20px;
 }
 .featured-project-copy,
-.featured-project-contribution {
+.featured-project-details {
   min-width: 0;
 }
-.featured-project-contribution h4 {
+.featured-project-details section + section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.featured-project-details h4 {
   margin-bottom: 12px;
   font-size: 14px;
   font-weight: 550;
 }
-.featured-project-contribution p {
+.featured-project-details p {
   font-size: 14px;
   line-height: 1.8;
   color: var(--muted);
@@ -490,7 +495,7 @@ section.selected-projects {
   .featured-project-lead .featured-project-actions {
     grid-column: 1 / -1;
   }
-  .featured-project-contribution {
+  .featured-project-details {
     padding-top: 4px;
   }
 }

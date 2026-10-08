@@ -17,7 +17,7 @@ export const projects: readonly Project[] = [
     overview:
       "PathFolio is a career navigation platform for young people in Australia. It combines labour-market indicators with individual skills, education, and career goals to support career exploration, forecasting, and personalised roadmaps. It is my capstone project at Monash University.",
     contribution:
-      "As part of my Monash capstone project, I contributed to system architecture and developed frontend interfaces and backend services for career exploration and planning. I built career-forecasting functionality and personalised roadmap logic using labour-market indicators alongside users' skills, education, and career goals.",
+      "I designed and implemented the frontend and implemented the backend for several features.",
   },
   {
     id: "auditrax",

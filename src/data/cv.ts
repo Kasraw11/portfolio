@@ -131,8 +131,8 @@ export const cvSections: readonly CvSection[] = [
         period: "2026",
         technologies: "Next.js, TypeScript, Python, FastAPI, AWS",
         bullets: [
-          "Contributed to system Architecture design and developed frontend interfaces and backend services for career exploration and planning for young people in Australia.",
-          "Built career-forecasting functionality and personalised roadmap logic using labour-market indicators, user skills, education and career goals.",
+          "Designed and implemented the frontend.",
+          "Implemented the backend for several features.",
         ],
       },
       {
