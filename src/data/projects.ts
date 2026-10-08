@@ -2,7 +2,7 @@ import type { Project } from "@/types/portfolio";
 
 export const featuredProjectId = "pathfolio";
 
-// Projects and contribution scope from Kasra_Janesar_CV_2026.docx.
+// Projects and contribution scope from Kasra_Janesar_CV_2026.docx and owner updates.
 export const projects: readonly Project[] = [
   {
     id: "pathfolio",
@@ -13,7 +13,7 @@ export const projects: readonly Project[] = [
     status: "CV project",
     description:
       "Career guidance and personalised planning for young Australians.",
-    technologies: ["Next.js", "TypeScript", "Python", "FastAPI"],
+    technologies: ["Next.js", "TypeScript", "Python", "FastAPI", "AWS"],
     overview:
       "PathFolio is a career navigation platform for young people in Australia. It combines labour-market indicators with individual skills, education, and career goals to support career exploration, forecasting, and personalised roadmaps. It is my capstone project at Monash University.",
     contribution:
@@ -44,11 +44,11 @@ export const projects: readonly Project[] = [
     status: "CV project",
     description:
       "A wildlife observation platform with AI-assisted species detection.",
-    technologies: ["Next.js", "TypeScript", "AWS S3", "Amazon Cognito", "GCP"],
+    technologies: ["Next.js", "TypeScript", "AWS", "GCP"],
     overview:
       "FaunaLens, also called Aussie EcoLens, connects an image library and media uploads with a team-built species-detection pipeline. The platform includes authentication, media management, notifications, and settings, with frontend flows integrated into serverless AWS and GCP services.",
     contribution:
-      "I developed frontend features for media management, the image library, uploads, notifications, and settings. I integrated Amazon Cognito authentication and implemented secure browser-to-S3 uploads, then tested interfaces and integrated frontend flows with the team's serverless AWS/GCP species-detection pipeline.",
+      "I developed frontend features for media management, the image library, uploads, notifications, and settings. I integrated authentication and implemented secure media uploads using AWS, then tested interfaces and integrated frontend flows with the team's serverless AWS/GCP species-detection pipeline.",
     demoUrl: "https://fauna-lens.vercel.app/login",
   },
   {

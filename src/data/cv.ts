@@ -129,7 +129,7 @@ export const cvSections: readonly CvSection[] = [
         title: "PathFolio",
         subtitle: "Career navigation platform",
         period: "2026",
-        technologies: "Next.js, TypeScript, Python, FastAPI",
+        technologies: "Next.js, TypeScript, Python, FastAPI, AWS",
         bullets: [
           "Contributed to system Architecture design and developed frontend interfaces and backend services for career exploration and planning for young people in Australia.",
           "Built career-forecasting functionality and personalised roadmap logic using labour-market indicators, user skills, education and career goals.",
@@ -150,10 +150,10 @@ export const cvSections: readonly CvSection[] = [
         title: "FaunaLens / Aussie EcoLens",
         subtitle: "Wildlife AI Assisted observation platform",
         period: "2026",
-        technologies: "Next.js, TypeScript, AWS S3, Amazon Cognito, GCP",
+        technologies: "Next.js, TypeScript, AWS, GCP",
         bullets: [
           "Developed frontend features for media management, the image library, uploads, notifications and settings.",
-          "Integrated Amazon Cognito authentication and implemented secure browser-to-S3 uploads.",
+          "Integrated authentication and implemented secure media uploads using AWS.",
           "Tested interfaces and integrated frontend flows with a team-built serverless AWS/GCP species-detection pipeline.",
         ],
         link: {

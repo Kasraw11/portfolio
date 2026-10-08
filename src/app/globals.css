@@ -44,6 +44,8 @@
     transparent 46%
   );
   --glass-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+  --card-hover-shadow:
+    0 10px 28px rgb(0 0 0 / 28%), 0 4px 18px rgb(255 255 255 / 6%);
   --glass-inset: inset 0 1px 0 var(--glass-highlight);
   --glass-selected: rgb(255 255 255 / 10%);
   --glass-blur: 24px;
@@ -127,6 +129,8 @@
     transparent 48%
   );
   --glass-shadow: 0 8px 24px rgb(29 29 31 / 4%);
+  --card-hover-shadow:
+    0 10px 28px rgb(21 45 80 / 12%), 0 2px 8px rgb(21 45 80 / 5%);
   --glass-selected: rgb(29 29 31 / 6%);
   --nav-selected-fill: rgb(32 62 102 / 90%);
   --nav-selected-sheen: linear-gradient(
@@ -2112,6 +2116,36 @@ a.contact-card:hover {
   background:
     radial-gradient(ellipse at 100% 100%, var(--card-glow), transparent 70%),
     var(--glass-sheen), var(--glass-fill);
+}
+.skill-group,
+.profile-rail {
+  transition: box-shadow 260ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  :is(
+    .about-skill-card,
+    .project-card,
+    .featured-project,
+    .contact-card,
+    .contact-email-panel,
+    .skill-group,
+    .profile-rail
+  ):hover {
+    box-shadow: var(--glass-inset), var(--card-hover-shadow);
+  }
+}
+@media (forced-colors: none) {
+  :is(
+    .about-skill-card,
+    .project-card,
+    .featured-project,
+    .contact-card,
+    .contact-email-panel,
+    .skill-group,
+    .profile-rail
+  ):focus-within {
+    box-shadow: var(--glass-inset), var(--card-hover-shadow);
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-main,

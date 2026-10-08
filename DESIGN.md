@@ -112,7 +112,7 @@ The CV starts collapsed at the bottom of About. Its expanded view uses a distinc
 
 ## Motion and accessibility
 
-Identity, hero details, and the About introduction settle by 8px over 480ms; details content fades in over 240ms. Clickable project/contact cards lift by 3px on precise-pointer hover, and text-link arrows move 3px. Static skills cards do not lift or pretend to be clickable. Use the shared ease-out and motion variables. Reduced motion disables animations and movement. Reduced transparency uses solid surfaces; forced colors restores system surfaces and visible borders. Keep keyboard focus, skip navigation, native disclosures, contrast, and theme persistence intact.
+Identity, hero details, and the About introduction settle by 8px over 480ms; details content fades in over 240ms. Clickable project/contact cards lift by 3px on precise-pointer hover, and text-link arrows move 3px. Content cards and the profile rail gain a slight surrounding shadow on mouse hover or keyboard focus within, using the shared card-hover-shadow token: neutral depth in dark mode and a muted navy shadow in light mode. Static skills cards do not lift or use a pointer cursor. Touch devices avoid hover-only shadows; forced colors disables decorative shadows. Use the shared ease-out and motion variables. Reduced motion disables animations and movement. Reduced transparency uses solid surfaces; forced colors restores system surfaces and visible borders. Keep keyboard focus, skip navigation, native disclosures, contrast, and theme persistence intact.
 
 ## Maintenance
 
