@@ -1,0 +1,83 @@
+Dependency security maintenance - 24 October 2026 (Australia/Sydney)
+
+Scope
+Repository: D:\Projects\Protfolio; package name: personal-portfolio.
+Reviewed all tracked files, npm manifests/lockfile, scripts, configuration,
+source imports and existing tests. No separate backend manifest, API routes,
+database integration or Futari feature implementations exist in this checkout.
+Authentication, letters, scheduled delivery, capsules, notifications, Princess
+Attention and Date Ideas were therefore not feature-tested.
+Existing untracked output/ and tmp/ files were preserved.
+
+Before patching
+npm audit: 2 vulnerable packages (1 critical, 1 high), covering 4 advisories.
+Production: next 16.3.8, with these advisories:
+- Critical: image optimization remote code execution (Linux/glibc condition).
+  https://github.com/advisories/GHSA-2464-fhr4-w9xw
+- High: Server Actions denial of service.
+  https://github.com/advisories/GHSA-p3m5-59mp-jv5r
+- Critical: use-cache typed-array remote code execution.
+  https://github.com/advisories/GHSA-673q-mjm6-r5xr
+No use-server/use-cache implementations were found in application source;
+the version findings do not establish that all exploit conditions were present.
+Development only: zod 4.6.5 through eslint-plugin-react-hooks, high severity
+memory exhaustion while validating oversized collections.
+  https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+Production and full audits were run separately; development-only findings were
+classified using npm explain and lockfile dev flags.
+
+Implemented updates
+next: 16.3.8 -> 16.4.3 (security release within existing major).
+eslint-config-next: 16.3.8 -> 16.4.3 (align with Next.js).
+react and react-dom: 19.3.0 -> 19.3.1 (paired patch releases).
+zod: 4.6.5 -> 4.6.7 (transitive security patch; no direct dependency added).
+@types/node: 24.19.1 -> 24.19.2 (patch within installed Node 24 line).
+prettier: 3.9.9 -> 3.9.10 (patch within existing major).
+Next.js internals @next/env, @next/eslint-plugin-next and all eight @next/swc
+platform variants: 16.3.8 -> 16.4.3.
+Preserved npm, package-lock.json, existing version-range conventions and scripts.
+No overrides, force fixes, added application dependencies, or application-source,
+UI, business-logic, schema or feature-behaviour changes.
+
+Maintenance configuration
+Added .github/dependabot.yml: npm at repository root, weekly, maximum five open
+pull requests. No automatic merge configuration or CI/infrastructure changes.
+No backend ecosystem entry is applicable to this checkout.
+.gitignore already excludes node_modules, build output, environment files,
+logs, TypeScript build metadata and verification artifacts; no edit needed.
+
+Verification after updates (Node 24.16.0, npm 11.13.0, Windows)
+PASS: npm audit --json: zero known vulnerabilities across all dependencies.
+PASS: npm audit --omit=dev --json: zero production vulnerabilities.
+PASS: npm ls --all: no invalid/missing peer dependency findings.
+PASS: npm ci --dry-run --ignore-scripts --audit=false --fund=false:
+      manifests and lockfile accepted; this was not a clean reinstall.
+PASS: npm run typecheck (next typegen and tsc --noEmit).
+PASS: npm run lint (ESLint).
+PASS: npm test: all 5 theme unit tests.
+PASS: npm run build: Next.js 16.4.3 production build, all static routes generated.
+PASS: node --test tests/security.http.mjs against that production build:
+      all 27 tests. Covers /, /about, /projects, /contact, missing route status,
+      security headers, private/retired file exclusions, query reflection and
+      redirects, rejected external/internal image URLs, local image optimization,
+      and absence of served browser source maps. Starts and stops next start.
+PASS: git diff --check.
+Backend tests: not applicable; no separate backend or backend tests present.
+No browser interaction/visual regression suite or exploit proof was run.
+Raw audit/outdated/tree evidence is local in .verification/dependencies/ (ignored).
+
+Remaining concerns and staging
+No known npm vulnerabilities remain at audit time. This is not a guarantee
+against undisclosed vulnerabilities or application-level security defects.
+ESLint 9.39.5 is end-of-life per https://eslint.org/version-support/.
+Kept it because installed eslint-plugin-import 2.32.0, eslint-plugin-jsx-a11y
+6.10.2 and eslint-plugin-react 7.37.5 declare peer support only through ESLint 9;
+forcing ESLint 10 would violate those compatibility constraints.
+Other deliberately deferred majors: TypeScript 5.9.3 -> 7.0.2 and @types/node
+24.19.2 -> 26.6.5. Installed typescript-eslint 8.71.1 supports TypeScript <6.1.0;
+Node 26 types would also diverge from the verified Node 24 runtime.
+Current Next.js/React peers and Node engine requirements are satisfied.
+The audited portfolio is ready for staging from the dependency/build/test
+perspective on the verified Node 24 runtime, with the ESLint maintenance debt
+above. Futari staging readiness cannot be established from this repository.
+Nothing was deployed, committed, or pushed.

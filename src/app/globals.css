@@ -667,67 +667,21 @@ a.contact-card:hover {
 .hero-actions {
   margin-top: 28px;
 }
-.hero-portrait-layout {
+.hero-text-layout {
   gap: 32px;
   padding-block: 56px 72px;
 }
-.hero-portrait-layout .hero-main {
+.hero-text-layout .hero-main {
   align-self: center;
 }
-.hero-portrait-layout .hero-actions {
+.hero-text-layout .hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 24px;
   margin-top: 28px;
 }
-.hero-portrait-stage {
-  position: relative;
-  min-width: 0;
-  isolation: isolate;
-}
-.hero-portrait-stage::before {
-  content: "";
-  position: absolute;
-  inset: -8% 0;
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at 50% 62%,
-    var(--portrait-glow),
-    transparent 68%
-  );
-}
-.hero-portrait {
-  position: relative;
-  width: min(100%, 280px);
-  aspect-ratio: 3 / 4;
-  margin-inline: auto;
-  overflow: hidden;
-  border-radius: var(--radius-card);
-  mask-image: linear-gradient(to bottom, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent);
-}
-.hero-portrait-photo {
-  object-fit: cover;
-  object-position: center top;
-  transform: scale(1.5);
-  transform-origin: 60% 68%;
-}
-.hero-portrait-placeholder {
-  position: absolute;
-  inset: 24px 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
-  color: var(--muted);
-  background: var(--glass-sheen);
-  font-size: 12px;
-}
-.hero-portrait-layout .hero-role {
+.hero-text-layout .hero-role {
   font-weight: 500;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   line-height: 1.45;
@@ -736,41 +690,14 @@ a.contact-card:hover {
   margin: 20px 0 0;
   max-width: 480px;
 }
-.hero-portrait-layout .hero-introduction {
+.hero-text-layout .hero-introduction {
   font-size: 15px;
   line-height: 1.85;
   margin-top: 20px;
 }
-@media (min-width: 700px) {
-  .hero-portrait-layout {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-    gap: 32px;
-  }
-  .hero-portrait-stage {
-    grid-column: 2;
-  }
-  .hero-portrait {
-    width: min(100%, 340px);
-  }
-}
 @media (min-width: 1100px) {
-  .hero-portrait-layout {
-    gap: 80px;
-    min-height: 560px;
+  .hero-text-layout {
     padding-block: 56px 64px;
-  }
-  .hero-portrait {
-    width: min(100%, 340px);
-  }
-}
-@media (forced-colors: active) {
-  .hero-portrait-stage::before {
-    display: none;
-  }
-  .hero-portrait-placeholder {
-    background: Canvas;
-    color: CanvasText;
-    border-color: CanvasText;
   }
 }
 .button {
