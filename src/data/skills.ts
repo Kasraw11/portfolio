@@ -1,14 +1,5 @@
 import type { SkillGroup } from "@/types/portfolio";
 
-// Owner-selected homepage highlights; independent of the detailed About toolkit.
-export const skillHighlights: readonly Pick<SkillGroup, "name" | "skills">[] = [
-  { name: "Programming", skills: ["Java", "Python"] },
-  { name: "Frontend", skills: ["JavaScript", "Next.js"] },
-  { name: "APIs", skills: ["FastAPI"] },
-  { name: "Databases", skills: ["MySQL", "MongoDB", "Firebase Firestore"] },
-  { name: "Cloud", skills: ["AWS", "GCP"] },
-];
-
 // Technical skills from the CV and owner-provided updates.
 export const skillGroups: readonly SkillGroup[] = [
   {

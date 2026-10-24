@@ -9,9 +9,10 @@ from reportlab.lib.enums import TA_LEFT
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[2]
-data = json.loads((ROOT / 'tmp/pdfs/cv.json').read_text())
+data = json.loads(Path(__file__).with_name('cv.json').read_text())
 sections = {s['id']: s for s in data['cvSections']}
 OUT = ROOT / 'output/pdf/Kasra_Janesar_CV_2026_Two_Page.pdf'
+OUT.parent.mkdir(parents=True, exist_ok=True)
 W, H = 595.276, 841.89
 M = 43
 INK = colors.HexColor('#182837')

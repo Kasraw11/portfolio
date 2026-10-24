@@ -58,7 +58,9 @@ export function AboutContent() {
   return (
     <>
       <header className="about-story">
-        <p>{profile.about}</p>
+        {profile.about.split("\n\n").map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
         <ul className="interest-list" aria-label="Professional interests">
           {profile.interests.map((item) => (
             <li key={item}>{item}</li>

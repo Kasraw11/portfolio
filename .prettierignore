@@ -5,3 +5,6 @@ package-lock.json
 next-env.d.ts
 .verification
 .impeccable
+output
+tmp
+coverage

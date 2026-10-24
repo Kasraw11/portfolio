@@ -10,7 +10,7 @@ export const profile: Profile = {
   aboutPhotoUrl: "/images/portraits/about.jpeg",
   introduction: "Full-stack development with a cloud focus.",
   about:
-    "I’m Kasra, a Master of Information Technology student at Monash University in Melbourne. My experience spans full-stack development, frontend design, system architecture, data analytics, and cloud technologies. I enjoy solving problems and building practical technical solutions, and I’m seeking opportunities in DevOps or software engineering.",
+    "With a Bachelor's degree in Software Engineering, I'm currently completing my Master of Information Technology at Monash University. My experience spans full-stack development, frontend design, systems analysis and architecture, data analytics, and cloud technologies.\n\nI enjoy designing and building applications, understanding how systems work, and exploring new technologies. I also have a habit of paying attention to the smallest details, sometimes more than I probably should.",
   aboutSummary:
     "A Monash Master of IT student focused on full-stack development, system design, and cloud technologies, seeking opportunities in DevOps and software engineering.",
   background:

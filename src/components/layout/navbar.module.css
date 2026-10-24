@@ -1,0 +1,148 @@
+.header {
+  position: relative;
+  z-index: 20;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  column-gap: 26px;
+  min-height: 84px;
+}
+
+.brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--accent-2);
+  font-size: 28px;
+  font-weight: 550;
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+
+.actions {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  position: relative;
+}
+
+.actions::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 22px;
+  border-left: 1px solid var(--line-hover);
+}
+
+.actions :global(.theme-toggle) {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.actions :global(.theme-toggle):hover {
+  color: var(--foreground);
+  background: var(--glass-selected);
+}
+
+.actions :global(.theme-toggle) svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.4;
+}
+
+.navigation {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.navigation a:hover,
+.navigation a[aria-current="page"] {
+  color: var(--foreground);
+}
+
+.menuToggle {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .inner {
+    grid-template-columns: 1fr auto;
+    min-height: 72px;
+    column-gap: 12px;
+  }
+
+  .brand {
+    font-size: 25px;
+  }
+
+  .actions {
+    grid-column: 2;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .actions::before {
+    display: none;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--foreground);
+    font: inherit;
+    font-size: 13px;
+  }
+
+  .navigation {
+    display: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 6px 0 16px;
+    border-bottom: 1px solid var(--line);
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation a {
+    font-size: 13px;
+  }
+}
+
+@media (forced-colors: active) {
+  .actions :global(.theme-toggle) {
+    border-color: ButtonText;
+  }
+
+  .navigation a[aria-current="page"] {
+    text-decoration: underline;
+  }
+}

@@ -22,7 +22,7 @@
     -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI",
     Helvetica, Arial, sans-serif;
   --font-display: var(--font-body);
-  --page-max: 1200px;
+  --page-max: 1280px;
   --radius-control: 999px;
   --radius-card: 24px;
   --radius-navigation: 22px;
@@ -205,7 +205,7 @@ body {
   margin: 0;
   background-color: var(--background);
   background-image: radial-gradient(
-    ellipse 80% 560px at 65% 120px,
+    ellipse 55% 580px at 50% 260px,
     var(--canvas-glow),
     transparent 72%
   );
@@ -272,6 +272,9 @@ svg {
 }
 main.page-width {
   flex: 1;
+}
+main.page-width:has(#home) {
+  flex: 0;
 }
 .primary-nav a[aria-current="page"] {
   color: var(--nav-selected-text, var(--foreground));
@@ -391,112 +394,16 @@ main.page-width {
   margin: 0;
   color: var(--muted);
 }
-.featured-project {
-  display: grid;
-  gap: 20px;
-  align-content: start;
-  padding: clamp(24px, 4vw, 48px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-card);
-  background: var(--glass-sheen), var(--glass-fill);
-  box-shadow: var(--glass-inset);
-}
 .project-category {
   font-size: 12px;
   color: var(--accent-2);
   margin-bottom: 16px;
-}
-section.selected-projects {
-  padding-top: 16px;
-}
-.selected-projects-grid {
-  display: grid;
-  gap: 20px;
-}
-.featured-project-copy,
-.featured-project-details {
-  min-width: 0;
-}
-.featured-project-details section + section {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-.featured-project-details h4 {
-  margin-bottom: 12px;
-  font-size: 14px;
-  font-weight: 550;
-}
-.featured-project-details p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-.featured-project-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 28px;
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
-  align-self: end;
-}
-.featured-project-actions .text-link {
-  min-height: 44px;
-}
-.featured-project-secondary {
-  grid-template-rows: 1fr auto;
-  padding: 28px;
-}
-.featured-project.featured-project-secondary h3 {
-  font-size: clamp(1.5rem, 2.2vw, 1.8rem);
-}
-.featured-project.featured-project-lead h3 {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-}
-.featured-project .project-title {
-  justify-content: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.featured-project h3 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 550;
-  letter-spacing: -0.03em;
-}
-.featured-project .supporting-copy {
-  max-width: 620px;
-  font-size: 16px;
-}
-.featured-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 0;
-  font-size: 12px;
-  color: var(--muted);
 }
 @media (min-width: 768px) {
   .home-highlights {
     grid-template-columns: 1.1fr 1fr;
     gap: 96px;
     padding-block: 64px;
-  }
-  .selected-projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .featured-project-lead {
-    grid-column: 1 / -1;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 24px 48px;
-  }
-  .featured-project-lead .featured-project-actions {
-    grid-column: 1 / -1;
-  }
-  .featured-project-details {
-    padding-top: 4px;
   }
 }
 .contact-card {
@@ -943,38 +850,6 @@ a.contact-card:hover {
 .project-links {
   display: flex;
   gap: 20px;
-}
-.skills-grid {
-  display: grid;
-  gap: 16px;
-}
-.skill-group {
-  min-width: 0;
-  padding: 26px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-card);
-}
-.skill-group h3 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  font-weight: 550;
-}
-.skill-group h3 svg {
-  width: 22px;
-  height: 22px;
-  color: var(--accent-2);
-}
-.skill-group ul {
-  list-style: none;
-  padding: 0;
-  margin: 22px 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 16px;
-  font-size: 14px;
-  color: var(--muted);
 }
 .interest-list {
   display: flex;
@@ -1978,7 +1853,6 @@ a.contact-card:hover {
 .nav-shell,
 .project-card,
 .contact-card,
-.skill-group,
 .contact-email-panel {
   background: var(--surface);
   box-shadow: var(--glass-inset), var(--glass-shadow);
@@ -1990,7 +1864,6 @@ a.contact-card:hover {
   .nav-shell,
   .project-card,
   .contact-card,
-  .skill-group,
   .contact-email-panel,
   .button-secondary {
     background: var(--glass-sheen), var(--glass-fill);
@@ -2006,9 +1879,6 @@ a.contact-card:hover {
 }
 @media (min-width: 640px) {
   .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2076,15 +1946,10 @@ a.contact-card:hover {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .skills-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-  }
 }
 /* Quiet depth across content cards; movement is reserved for actionable cards. */
 .about-skill-card,
 .project-card,
-.featured-project,
 .contact-card,
 .contact-email-panel {
   background: var(--card-gradient), var(--glass-sheen), var(--glass-fill);
@@ -2099,7 +1964,6 @@ a.contact-card:hover {
     radial-gradient(ellipse at 100% 100%, var(--card-glow), transparent 70%),
     var(--glass-sheen), var(--glass-fill);
 }
-.skill-group,
 .profile-rail {
   transition: box-shadow 260ms var(--ease-out);
 }
@@ -2107,10 +1971,8 @@ a.contact-card:hover {
   :is(
     .about-skill-card,
     .project-card,
-    .featured-project,
     .contact-card,
     .contact-email-panel,
-    .skill-group,
     .profile-rail
   ):hover {
     box-shadow: var(--glass-inset), var(--card-hover-shadow);
@@ -2120,10 +1982,8 @@ a.contact-card:hover {
   :is(
     .about-skill-card,
     .project-card,
-    .featured-project,
     .contact-card,
     .contact-email-panel,
-    .skill-group,
     .profile-rail
   ):focus-within {
     box-shadow: var(--glass-inset), var(--card-hover-shadow);
@@ -2145,8 +2005,7 @@ a.contact-card:hover {
   }
   @media (hover: hover) and (pointer: fine) {
     a.contact-card:hover,
-    .project-card:hover,
-    .featured-project:hover {
+    .project-card:hover {
       transform: translateY(-3px);
       border-color: var(--line-hover);
     }
@@ -2178,8 +2037,7 @@ a.contact-card:hover {
 }
 @media (prefers-reduced-transparency: reduce) {
   .about-skill-card,
-  .about-skill-card:nth-child(2),
-  .featured-project {
+  .about-skill-card:nth-child(2) {
     background: var(--surface);
     color: var(--foreground);
     -webkit-backdrop-filter: none;
@@ -2188,7 +2046,6 @@ a.contact-card:hover {
   .nav-shell,
   .project-card,
   .contact-card,
-  .skill-group,
   .contact-email-panel,
   .button-secondary {
     background: var(--surface);
@@ -2220,8 +2077,7 @@ a.contact-card:hover {
     display: none;
   }
   .about-skill-card,
-  .about-skill-card:nth-child(2),
-  .featured-project {
+  .about-skill-card:nth-child(2) {
     background: Canvas;
     color: CanvasText;
     border: 1px solid CanvasText;
@@ -2235,7 +2091,6 @@ a.contact-card:hover {
   .nav-shell,
   .project-card,
   .contact-card,
-  .skill-group,
   .contact-email-panel,
   .button-secondary {
     background: Canvas;

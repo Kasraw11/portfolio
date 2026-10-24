@@ -1,7 +1,5 @@
 import type { Project } from "@/types/portfolio";
 
-export const featuredProjectId = "pathfolio";
-
 // Projects and contribution scope from Kasra_Janesar_CV_2026.docx and owner updates.
 export const projects: readonly Project[] = [
   {

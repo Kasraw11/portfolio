@@ -1,0 +1,39 @@
+.homeFooter {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0 34px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 24px;
+  position: relative;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.socials a + a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 16px;
+  border-left: 1px solid var(--line-hover);
+}
+
+.socials a:hover {
+  color: var(--foreground);
+}
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+}

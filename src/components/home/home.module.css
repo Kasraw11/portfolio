@@ -1,0 +1,199 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 0 32px;
+  text-align: center;
+}
+
+.introduction h1 {
+  color: var(--accent);
+  background: linear-gradient(120deg, #152d50 15%, #426a9b 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+:global([data-theme="dark"]) .introduction h1 {
+  background-image: var(--title-gradient);
+}
+
+.tagline {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.75vw, 1.375rem);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.characterStage {
+  position: relative;
+  isolation: isolate;
+  margin-top: 18px;
+  max-width: 100%;
+}
+
+.phrase {
+  white-space: nowrap;
+}
+
+.characterStage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  width: 250px;
+  height: 28px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, var(--portrait-glow), transparent 70%);
+}
+
+.characterStage::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -24px -40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    transparent 35%,
+    var(--portrait-glow) 58%,
+    transparent 75%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.character {
+  display: block;
+  width: auto;
+  height: 460px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hello {
+  margin-top: 17px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.action {
+  justify-content: center;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.about {
+  padding: 35px 20px 0;
+  border-top: 1px solid var(--line-hover);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.about p {
+  max-width: 620px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 32px;
+    padding-bottom: 27px;
+  }
+
+  .introduction h1 {
+    font-size: clamp(2.4rem, 10.5vw, 3.5rem);
+  }
+
+  .tagline {
+    max-width: 330px;
+    margin: 12px auto 0;
+    text-wrap: pretty;
+  }
+
+  .characterStage {
+    margin-top: 24px;
+  }
+
+  .characterStage::after {
+    inset-inline: -16px;
+  }
+
+  .character {
+    height: 360px;
+  }
+
+  .hello {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  .about {
+    padding: 29px 0 0;
+  }
+
+  .about h2 {
+    font-size: 17px;
+  }
+
+  .about p {
+    max-width: 400px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .introduction,
+  .characterStage,
+  .hello {
+    animation: arrive 600ms var(--ease-out) both;
+  }
+
+  .characterStage {
+    animation-delay: 80ms;
+  }
+
+  .hello {
+    animation-delay: 160ms;
+  }
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (forced-colors: active) {
+  .introduction h1 {
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+  }
+
+  .characterStage::before,
+  .characterStage::after {
+    display: none;
+  }
+}

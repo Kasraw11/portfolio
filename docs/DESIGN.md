@@ -51,7 +51,7 @@ colors:
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI Variable, Segoe UI, Helvetica, Arial, sans-serif"
-    fontSize: "clamp(4.3rem, 8vw, 6rem)"
+    fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)"
     fontWeight: 600
     lineHeight: "1.03"
     letterSpacing: "-0.04em"
@@ -102,7 +102,7 @@ src/app/globals.css owns theme variables. The frontmatter mirrors the core palet
 
 ## Layout and content
 
-Four routes share a floating navigation capsule and footer. Home opens with a small greeting, the full name Kasra Janesar, and the role directly beneath it, followed by location and View Projects / Contact me actions. The homepage hero is text-only in a single column at every viewport size, with no portrait or placeholder. Selected projects follow immediately: a full-width PathFolio feature with an About section above My contribution, separated by a subtle divider, then smaller Aussie EcoLens and Auditrax text previews side by side from 768px. About and compact skill highlights follow the work. Contact icons appear only in the minimal footer; Home has no duplicate social row or contact cards. Project previews are text-only, with no image slots or placeholders. The About portrait remains configured by aboutPhotoUrl, cropped at scale 1.35 around 44%/42%. Original photo assets are preserved.
+Four routes share a quiet, borderless header: KJ home link on the left, navigation and a separated theme toggle on the right. Home follows the owner's supplied minimal dark portfolio reference. A centered “Hi, I’m Kasra.” heading and “IT student. Software developer. Curious by nature.” tagline sit above a full-body 3D-style character. The character preserves the owner's glasses, hairstyle, black vest, cream sweatshirt, and jeans, with one hand raised in greeting. This is a static transparent PNG, served with Next.js Image at 460px tall on desktop and 360px on mobile. Location and a Contact me button with an animated neon border follow, then a full-width divider and a centered short about section. Labelled GitHub and LinkedIn links complete the page. Projects and detailed skills remain available on their dedicated routes. The About portrait remains configured by aboutPhotoUrl. Original photo assets are preserved. Homepage content lives in src/data/home.ts and scoped CSS modules isolate its layout from the other routes.
 
 About uses a sticky 280px profile rail from 1000px and a stacked profile on smaller screens. The main column has the biography, three-role experience timeline, both degrees. Technical Skills and Soft Skills occupy two gradient cards from 700px and stack below that; all six owner-selected soft skills stay visible. Other Tools is its own section. Certificates, Languages, and Interests each have their own native disclosure. Sports include football, table tennis, badminton, and tennis. There is no Courses section. Older supporting tools, certificates, and personal interests remain from the earlier supplied CV; old reference details are not displayed.
 
@@ -116,15 +116,15 @@ Identity, hero details, and the About introduction settle by 8px over 480ms; det
 
 ## Maintenance
 
-Buttons and text actions use labels without decorative arrows. Linked social cards retain their external-link affordance. Contact no longer includes the CV promotion/link; CV viewing lives on About; downloads are removed.
+Contact me uses the existing pill-shaped neon border button style. More about me uses the standard secondary button without the neon effect. Both have plain text labels. Other buttons and text actions retain their existing labels. Linked social cards retain their external-link affordance. CV viewing lives on About; downloads are removed.
 
-Project card actions read "Project details"; expanded disclosures retain "Hide details". The hero navigation CTA remains "View Projects".
+Project card actions read "Project details"; expanded disclosures retain "Hide details". The homepage Contact me link opens Contact, and More about me opens About.
 
-Keep biography, projects, experience, skills, and contact details in typed data files. Content width is capped at 1200px, with 20px mobile and 40px desktop gutters. Preserve equivalent content and layout across themes. Do not add skill percentages, heavy glow, floating logos, or unrelated decorative cards.
+Keep biography, projects, experience, skills, and contact details in typed data files. Content width is capped at 1280px, with 20px mobile and 40px desktop gutters. Preserve equivalent content and layout across themes. Do not add skill percentages, heavy glow, floating logos, or unrelated decorative cards.
 
 Page titles use simple labels: About me, Projects, Contact. All share a full-width PageIntro above the page content, including About above its profile/content split. Titles use a 40px-to-56px scale, 550 weight, 1.1 line height, and -0.045em tracking inside a restrained translucent glass frame. The title-glass/title-glow/title-gradient tokens create navy gradient lettering and a soft navy halo in light mode, and neutral silver-white lettering in dark mode. Frames use 18px corners, a fine highlight, and 16px blur with reduced-transparency and forced-color fallbacks. Headers have 40px/56px top space and 32px/40px below, with no subtitle or divider. Contact aligns its location metadata opposite the heading and places email/social cards side by side from 900px, eliminating the empty left column.
 
-Homepage skillHighlights are maintained independently from the full About skillGroups in src/data/skills.ts: Programming (Java, Python), Frontend (JavaScript, Next.js), APIs (FastAPI), Databases (MySQL), Cloud (AWS, GCP).
+The About toolkit uses skillGroups in src/data/skills.ts. The retired homepage skillHighlights export and featured-project layout have been removed; projects and detailed skills remain on their dedicated routes.
 
 Light primary buttons use a translucent navy fill with a 165-degree glass sheen, fine inset edges, and layered navy-blue glow. Hover increases the halo without pulsing. The action-sheen/action-glass-edge/action-glow tokens control this light-only treatment. Reduced transparency uses a solid navy fill; forced colors uses system button colors. Dark primary buttons retain their previous styling.
 
@@ -134,16 +134,16 @@ Project technology tags use dedicated project-tag tokens: solid dark navy (#152d
 
 Project ownership is explicit: PathFolio, Auditrax, and FaunaLens are group projects with a My contribution section. SmartLoop and the three earlier projects are individual projects with a My work section. Ownership labels appear alongside project categories and are driven by the typed workType field.
 
-Hero name and role use a shared hero-text-gradient: deep navy to muted blue in light mode, and a neutral white-to-gray gradient in dark mode. Only these two text elements receive the effect; the greeting, supporting copy, and dark background remain unchanged. Forced colors restores solid text.
+The homepage heading uses a navy-blue text gradient in light mode and the shared silver-gray title-gradient token in dark mode, with muted supporting copy. The character has no enclosing box, border, or background. A broad, blurred oval halo sits behind and away from the character silhouette, using the existing portrait-glow token alongside the ground shadow. Its transparent center leaves breathing room around the character; mobile narrows the halo to fit the viewport. Forced colors removes decorative shadows. The existing entrance motion is preserved.
 
-Navigation page links are centered using equal flexible side columns on desktop, with the theme toggle at right. Mobile menu/theme controls and expanded links are centered. The hero role sits below the full name with balanced line wrapping, weight 500, a 1.25rem-to-1.6rem scale, 1.45 line height, and -0.02em tracking.
+Navigation page links align right on desktop. Below 640px, the menu button reveals a row of all four routes; Escape closes the menu and returns focus to its button. The mobile tagline wraps with balanced text.
 
-Light-mode active navigation uses a muted navy (#203e66) pill with white text through nav-selected tokens. Dark mode keeps its neutral active state. The hero role has no supporting summary beneath it.
+Active navigation uses foreground text, with muted inactive links, in both themes. Forced colors adds an underline to the current route.
 
-Navbar glass uses 64% charcoal fill in dark and 62% white fill in light, with 28px blur and 125% saturation. Active links use a subtle glass sheen: neutral gray in dark, translucent navy in light. Dark hero text stays strictly grayscale.
+The header has no enclosing glass capsule or active-link pills. About, Projects, and Contact retain their existing glass content cards.
 
-CV viewing controls share a pill-shaped neon orbit border with a four-second rotation and soft static halo. The cv-fill/cv-text/cv-orbit-color/cv-orbit-trail/cv-halo tokens keep the dark version charcoal and silver, and the light version navy with a blue highlight. The homepage Contact me action reuses the orbit with its existing accent color (navy in light, silver in dark) and transparent fill. Reduced motion leaves a static highlight; forced colors removes the decorative ring and uses system button colors. No CV download action is shown.
+CV viewing controls and the homepage Contact me button share a pill-shaped neon orbit border with a four-second rotation and soft static halo. The cv-fill/cv-text/cv-orbit-color/cv-orbit-trail/cv-halo tokens keep the dark version charcoal and silver, and the light version navy with a blue highlight. Reduced motion leaves a static highlight; forced colors removes the decorative ring and uses system button colors. No CV download action is shown.
 
-The footer is a minimal single row: copyright year and Kasra at left, email/LinkedIn/GitHub outline icons at right. No tagline, visible contact text, extra navigation, or back-to-top label. Icon links have accessible labels, tooltips, and 44px hit areas.
+Home has a centered GitHub / LinkedIn footer with visible labels and a fine vertical divider. Other routes retain copyright year and Kasra at left, email/LinkedIn/GitHub outline icons at right. All footer links have accessible labels and 44px hit areas.
 
 Route changes use React ViewTransition through the root template: page content fades out in 140ms and arrives with a 10px settle over 320ms; the shared navigation and footer stay outside the animated boundary. Browsers without view-transition support receive a short CSS entrance. Projects, About, and Contact reveal their marked cards once when they enter the viewport, with a maximum 110ms batch stagger. Reveals use the independent translate property so hover transforms still work. Default content remains visible without JavaScript. Reduced motion disables route and card animation, including a preference change during a reveal; keyboard focus cancels a reveal immediately.

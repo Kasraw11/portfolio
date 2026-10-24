@@ -1,0 +1,12 @@
+{
+  "method": "Built-in image_gen tool",
+  "date": "2026-10-24",
+  "file": "kasra-character.png",
+  "kind": "AI-generated 3D-style character illustration inspired by the owner's supplied photo; static transparent PNG, not a 3D model",
+  "references": [
+    "User-supplied kasra.JPG.jpeg for identity and clothing",
+    "User-supplied Minimal dark portfolio with 3D character.png for style and pose",
+    "Initial generated character refined toward the supplied cartoon style"
+  ],
+  "prompt": "Edit the character in reference image 1. Reference image 2 provides the exact target 3D cartoon rendering style.\nKeep the man's identity: dark swept short hair, round dark metal glasses, dark eyebrows, warm olive skin, a subtle moustache and beard stubble, friendly small smile. Keep the black quilted sleeveless vest over cream quarter-zip sweatshirt, blue jeans, off-white sneakers, wristwatch, one hand in pocket and one hand raised hello.\nChange only these things:\n1. Make him much more clearly a stylized 3D animated-film character like the character in reference image 2, with a moderately larger head, expressive eyes, smoother simplified facial planes, softly modeled hair clumps, adult cartoon proportions of about 5.5 heads tall. Not photoreal, not a photographic man with a filter. Beautiful soft 3D rendered materials and intentional cartoon sculpture.\n2. Remove ALL background and ALL glows. Absolutely no halos, gradients, scenery, colored blur, floor, or shadow around the figure. Everything outside the exact character silhouette must be fully transparent (alpha 0). Character itself must be opaque. The tool must produce real alpha transparency.\nFull-body portrait composition, entire hair through both shoes visible, centered and filling 94% of the canvas height. Neutral studio lighting on the person only. No text or logos. Output only the isolated 3D cartoon character asset, never a website layout."
+}

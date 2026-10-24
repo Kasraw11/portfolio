@@ -1,16 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Project } from "@/types/portfolio";
 
-export function ProjectCard({
-  project,
-  featured = false,
-  compact = false,
-}: {
-  project: Project;
-  featured?: boolean;
-  compact?: boolean;
-}) {
+export function ProjectCard({ project }: { project: Project }) {
   const projectContext = [
     project.category,
     project.workType === "group" ? "Group project" : "Individual project",
@@ -18,64 +9,6 @@ export function ProjectCard({
     .filter(Boolean)
     .join(" · ");
 
-  if (featured) {
-    return (
-      <article
-        id={project.id}
-        className={`featured-project ${compact ? "featured-project-secondary" : "featured-project-lead"}`}
-        data-reveal
-      >
-        <div className="featured-project-copy">
-          <p className="project-category">{projectContext}</p>
-          <div className="project-title">
-            <h3>{project.name}</h3>
-            {project.status === "Placeholder" && (
-              <span className="project-status">Concept</span>
-            )}
-            {project.status === "Details pending" && (
-              <span className="project-status">Details coming soon</span>
-            )}
-          </div>
-          <p className="supporting-copy">{project.description}</p>
-          {project.technologies.length > 0 && (
-            <ul className="featured-technologies" aria-label="Technologies">
-              {project.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-        {!compact && (
-          <div className="featured-project-details">
-            <section aria-labelledby={`${project.id}-featured-about`}>
-              <h4 id={`${project.id}-featured-about`}>About</h4>
-              <p>{project.overview}</p>
-            </section>
-            <section aria-labelledby={`${project.id}-featured-contribution`}>
-              <h4 id={`${project.id}-featured-contribution`}>
-                My contribution
-              </h4>
-              <p>{project.contribution}</p>
-            </section>
-          </div>
-        )}
-        <div className="featured-project-actions">
-          <Link
-            className="text-link"
-            href={`/projects#${project.id}`}
-            aria-label={`Project details for ${project.name}`}
-          >
-            Project details
-          </Link>
-          {project.demoUrl && (
-            <a className="text-link" href={project.demoUrl}>
-              Live demo
-            </a>
-          )}
-        </div>
-      </article>
-    );
-  }
   return (
     <article id={project.id} className="project-card" data-reveal>
       {project.image && (

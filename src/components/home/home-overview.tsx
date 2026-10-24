@@ -1,34 +1,20 @@
 import Link from "next/link";
-import { profile } from "@/data/profile";
-import { skillHighlights } from "@/data/skills";
+import { home } from "@/data/home";
+import styles from "./home.module.css";
 
 export function HomeOverview() {
   return (
-    <section
-      className="home-highlights"
-      aria-label="About and skills highlights"
-    >
-      <div className="home-highlight">
-        <h2>About me</h2>
-        <p>{profile.aboutSummary}</p>
-        <Link className="text-link" href="/about">
-          More about me
-        </Link>
-      </div>
-      <div className="home-highlight">
-        <h2>Skills at a glance</h2>
-        <dl className="home-skill-list">
-          {skillHighlights.map((group) => (
-            <div key={group.name}>
-              <dt>{group.name}</dt>
-              <dd>{group.skills.join(" · ")}</dd>
-            </div>
-          ))}
-        </dl>
-        <Link className="text-link" href="/about#skills">
-          My skills
-        </Link>
-      </div>
+    <section className={styles.about} aria-labelledby="home-about-title">
+      <h2 id="home-about-title">A little about me</h2>
+      {home.about.split("\n\n").map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
+      <Link
+        className={`button button-secondary ${styles.action}`}
+        href="/about"
+      >
+        More about me
+      </Link>
     </section>
   );
 }

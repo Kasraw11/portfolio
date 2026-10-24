@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/data/navigation";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import styles from "./navbar.module.css";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -13,7 +14,7 @@ export function Navbar() {
 
   return (
     <header
-      className="site-header"
+      className={styles.header}
       onKeyDown={(event) => {
         if (event.key === "Escape" && isOpen) {
           setIsOpen(false);
@@ -21,12 +22,20 @@ export function Navbar() {
         }
       }}
     >
-      <div className="page-width nav-shell">
-        <div className="nav-actions">
+      <div className={`page-width ${styles.inner}`}>
+        <Link
+          href="/"
+          className={styles.brand}
+          aria-label="Kasra Janesar — Home"
+          onClick={() => setIsOpen(false)}
+        >
+          KJ
+        </Link>
+        <div className={styles.actions}>
           <ThemeToggle />
           <button
             ref={toggleRef}
-            className="menu-toggle"
+            className={styles.menuToggle}
             type="button"
             aria-expanded={isOpen}
             aria-controls="primary-navigation"
@@ -49,7 +58,7 @@ export function Navbar() {
         <nav
           id="primary-navigation"
           aria-label="Main navigation"
-          className={`primary-nav ${isOpen ? "is-open" : ""}`}
+          className={`${styles.navigation} ${isOpen ? styles.open : ""}`}
         >
           {navigation.map((item) => (
             <Link

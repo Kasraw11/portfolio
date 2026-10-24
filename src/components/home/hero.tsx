@@ -1,34 +1,45 @@
+import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/data/profile";
-import { Icon } from "@/components/ui/icon";
+import { home } from "@/data/home";
+import styles from "./home.module.css";
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      aria-labelledby="hero-title"
-      className="hero hero-text-layout"
-    >
-      <div className="hero-main">
-        <p className="hero-greeting">Hello, I’m</p>
-        <h1 id="hero-title">
-          <span className="hero-gradient-text">{profile.fullName}</span>
-        </h1>
-        <p className="hero-role">
-          <span className="hero-gradient-text">{profile.role}</span>
+    <section id="home" aria-labelledby="hero-title" className={styles.hero}>
+      <div className={styles.introduction}>
+        <h1 id="hero-title">Hi, I’m {profile.name}.</h1>
+        <p className={styles.tagline}>
+          {home.tagline.map((phrase, index) => (
+            <span key={phrase}>
+              {index > 0 && " "}
+              <span className={styles.phrase}>{phrase}</span>
+            </span>
+          ))}
         </p>
-        <p className="hero-location">
-          <Icon name="pin" />
-          {profile.location}
+      </div>
+      <div className={styles.characterStage}>
+        <Image
+          src={home.character.src}
+          alt={home.character.alt}
+          width={1024}
+          height={1536}
+          sizes="(max-width: 600px) 240px, 310px"
+          loading="eager"
+          fetchPriority="high"
+          className={styles.character}
+        />
+      </div>
+      <div className={styles.hello}>
+        <p>
+          <span aria-hidden="true">📍</span> {profile.location}
         </p>
-        <div className="hero-actions">
-          <Link href="/projects" className="button button-primary">
-            View Projects
-          </Link>
-          <Link href="/contact" className="text-link hero-contact">
-            Contact me
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className={`text-link hero-contact ${styles.action}`}
+        >
+          Contact me
+        </Link>
       </div>
     </section>
   );

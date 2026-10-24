@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { About } from "@/components/home/about";
+import { About } from "@/components/about/profile";
 import { CvPreview } from "@/components/about/cv-preview";
 import { AboutContent } from "@/components/about/background-sections";
 import { PageIntro } from "@/components/ui/page-intro";
