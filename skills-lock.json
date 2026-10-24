@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "threejs-animation": {
+      "source": "cesartevisual/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-animation/SKILL.md",
+      "computedHash": "396a8ee74c2eedac8ee56ef939e956187491a3dcf3e302a24850f87b64b0dae5"
+    },
+    "threejs-interaction": {
+      "source": "cesartevisual/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-interaction/SKILL.md",
+      "computedHash": "216eebae5b41436043663d3eb6f87378eaf2be9038b4ce62e1fb537351b873ca"
+    },
+    "threejs-performance": {
+      "source": "cesartevisual/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-performance/SKILL.md",
+      "computedHash": "dc201e2c85d85a36fe322011db4eaf25257747c2bb641e161c085b1e03862be2"
+    },
+    "threejs-r3f": {
+      "source": "cesartevisual/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-r3f/SKILL.md",
+      "computedHash": "c49e6e0fab4f449909556e1371e82c4dbabd58800064a1a14db64712587dc718"
+    }
+  }
+}
