@@ -22,6 +22,9 @@ portfolio/
 │   ├── reports/DEPENDENCY_AUDIT.txt
 │   └── project-structure.md
 ├── public/images/           Public images and asset provenance
+├── public/_headers          Cloudflare Pages production security headers
+├── scripts/serve-static.mjs  Dependency-free local preview of out/
+├── scripts/fix-static-export.mjs  Windows-only generated-payload correction
 ├── scripts/cv/
 │   ├── build_cv.py          Optional offline PDF generator
 │   └── cv.json              Preserved generator input snapshot
@@ -47,6 +50,10 @@ portfolio/
                             eslint.config.mjs, postcss.config.mjs,
                             .gitignore, .prettierignore
 ```
+
+Cloudflare Pages uses the static export in ignored `out/`. Deployment settings
+and the `npm start` static-preview command are documented in
+[cloudflare-pages.md](cloudflare-pages.md). No Workers/OpenNext adapter is needed.
 
 Component CSS modules stay beside their components. `src/app/globals.css`
 remains the shared theme and motion token owner. The `@/*` alias continues to

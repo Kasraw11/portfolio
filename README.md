@@ -14,6 +14,12 @@ npm.cmd run dev
 
 Open http://localhost:3000. On PowerShell, use npm.cmd to avoid script execution restrictions.
 
+Production builds use Next.js static export. Run `npm.cmd run build` to generate
+`out/`, then `npm.cmd start` to preview it locally. Cloudflare Pages publishes
+`out/` directly; it does not run `next start`. See the
+[Cloudflare Pages deployment guide](docs/cloudflare-pages.md) for exact dashboard
+settings, image handling, and security headers.
+
 ## Pages and files
 
 - src/app: Home, About, Projects, Contact; global CSS theme and motion tokens.
@@ -62,7 +68,7 @@ Security review (7 October 2026): the production dependency audit reported zero 
 
 ## Next refinements
 
-Add real project screenshots, a PathFolio public link when available, social metadata and a favicon. Keep contribution wording accurate and avoid claiming unconfirmed deployment or outcomes. No database, authentication, CMS, or deployment has been added.
+Add real project screenshots, a PathFolio public link when available, social metadata and a favicon. Keep contribution wording accurate and avoid claiming unconfirmed deployment or outcomes. No database, authentication, or CMS has been added. Cloudflare Pages static-export configuration is provided; this repository change does not deploy the site.
 
 The About toolkit uses skillGroups in src/data/skills.ts. Unused homepage highlights and the retired featured-project layout have been removed.
 
