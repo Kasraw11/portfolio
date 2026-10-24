@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { home } from "@/data/home";
+import { CharacterScenes } from "./character-scenes";
 import styles from "./home.module.css";
 
 export function Hero() {
@@ -18,18 +18,7 @@ export function Hero() {
           ))}
         </p>
       </div>
-      <div className={styles.characterStage}>
-        <Image
-          src={home.character.src}
-          alt={home.character.alt}
-          width={1024}
-          height={1536}
-          sizes="(max-width: 600px) 240px, 310px"
-          loading="eager"
-          fetchPriority="high"
-          className={styles.character}
-        />
-      </div>
+      <CharacterScenes scenes={home.characterScenes} />
       <div className={styles.hello}>
         <p>
           <span aria-hidden="true">📍</span> {profile.location}

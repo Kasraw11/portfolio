@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/data/navigation";
@@ -9,6 +10,7 @@ import styles from "./navbar.module.css";
 
 export function Navbar() {
   const pathname = usePathname();
+  const currentPage = navigation.find((item) => item.href === pathname)?.label;
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -29,7 +31,15 @@ export function Navbar() {
           aria-label="Kasra Janesar — Home"
           onClick={() => setIsOpen(false)}
         >
-          KJ
+          <Image
+            src="/images/brand/kj-logo.webp"
+            alt=""
+            width={192}
+            height={192}
+            sizes="44px"
+            loading="eager"
+            className={styles.brandImage}
+          />
         </Link>
         <div className={styles.actions}>
           <ThemeToggle />
@@ -39,9 +49,14 @@ export function Navbar() {
             type="button"
             aria-expanded={isOpen}
             aria-controls="primary-navigation"
+            aria-label={
+              isOpen
+                ? "Close navigation menu"
+                : `Open navigation menu${currentPage ? `, current page: ${currentPage}` : ""}`
+            }
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? "Close" : "Menu"}
+            {isOpen ? "Close" : (currentPage ?? "Menu")}
             <svg
               width="18"
               height="18"

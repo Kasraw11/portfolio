@@ -31,10 +31,16 @@
   text-wrap: balance;
 }
 
+.characterGallery {
+  max-width: 100%;
+}
+
 .characterStage {
   position: relative;
   isolation: isolate;
   margin-top: 18px;
+  width: 460px;
+  height: 460px;
   max-width: 100%;
 }
 
@@ -70,12 +76,82 @@
   pointer-events: none;
 }
 
+.characterScene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.characterScene[data-active="true"] {
+  opacity: 1;
+}
+
 .character {
   display: block;
-  width: auto;
-  height: 460px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.sceneControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  visibility: hidden;
+}
+
+.sceneControls[data-ready="true"] {
+  visibility: visible;
+}
+
+.sceneDot,
+.scenePlayback {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.sceneDot span {
+  width: 6px;
+  height: 6px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.sceneDot[aria-pressed="true"] {
+  color: var(--foreground);
+}
+
+.sceneDot[aria-pressed="true"] span {
+  background: currentColor;
+}
+
+.sceneDot:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.sceneDot:focus-visible,
+.scenePlayback:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: -5px;
+}
+
+@media (hover: hover) {
+  .sceneDot:enabled:hover,
+  .scenePlayback:hover {
+    color: var(--foreground);
+    background: var(--glass-selected);
+  }
 }
 
 .hello {
@@ -130,14 +206,12 @@
 
   .characterStage {
     margin-top: 24px;
+    width: 360px;
+    height: 360px;
   }
 
   .characterStage::after {
     inset-inline: -16px;
-  }
-
-  .character {
-    height: 360px;
   }
 
   .hello {
@@ -160,6 +234,17 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .characterScene {
+    transform: translateY(6px);
+    transition:
+      opacity 600ms ease-in-out,
+      transform 600ms var(--ease-out);
+  }
+
+  .characterScene[data-active="true"] {
+    transform: translateY(0);
+  }
+
   .introduction,
   .characterStage,
   .hello {
@@ -172,6 +257,12 @@
 
   .hello {
     animation-delay: 160ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scenePlayback {
+    display: none;
   }
 }
 

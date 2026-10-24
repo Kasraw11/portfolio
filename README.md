@@ -25,14 +25,14 @@ settings, image handling, and security headers.
 - src/app: Home, About, Projects, Contact; global CSS theme and motion tokens.
 - src/components: modular layout, home, about, project, and UI components.
 - src/data/profile.ts: biography, contacts, and independent Home/About photo paths.
-- src/data/home.ts: homepage introduction, about copy, and character asset.
+- src/data/home.ts: homepage introduction, about copy, and three character scenes.
 - src/data/background.ts: experience, education, six soft skills, other tools, certificates, languages, and interests. No courses.
 - src/data/skills.ts: Programming, Frontend, Backend & APIs, Databases, Cloud & Tools.
 - src/data/projects.ts: current project descriptions, contributions, and technologies.
 - src/data/cv.ts: structured CV identity, education, experience, project entries, skill groups, and languages, shown inside a closed-by-default disclosure with section dividers.
 - archive/cv/Kasra_Janesar_CV_2026.docx: preserved source document, outside the public web root.
 - public/images/portraits/homepage.jpeg and about.jpeg: supplied photos, framed through CSS.
-- public/images/hero/kasra-character.png: transparent 3D-style illustration generated from the owner's photo. The adjacent provenance JSON records the built-in image generation prompt and references.
+- public/images/hero/: original character PNG plus optimized greeting, ThinkPad gaming-room coding, and holographic architecture WebP illustrations. kasra-scenes.provenance.json records the built-in image-generation prompts and references.
 - docs/DESIGN.md: visual contract and theme tokens.
 - docs/PRODUCT.md: product scope and content rules.
 - docs/project-structure.md: folder responsibilities, local artifacts, and maintenance decisions.
@@ -76,4 +76,4 @@ Project cards show a short summary directly below the title, followed by technol
 
 The footer displays only copyright and accessible email, LinkedIn, and GitHub icons. The root template provides route transitions; PageContent progressively enhances marked cards with one-time viewport reveals. Reduced-motion settings and no-JavaScript rendering keep content immediately usable.
 
-Home follows the supplied minimal portfolio reference: a centered “Hi, I’m Kasra.” introduction, short tagline, full-body illustrated character, Melbourne location and Contact me link. A divided about section leads to About, with labelled GitHub and LinkedIn links below. Projects and detailed skills live on their dedicated routes. The shared header has a KJ home link, right-aligned navigation, and a persistent theme toggle; navigation collapses into a menu on mobile. The character is a static transparent PNG, served responsively through Next.js Image, with a brief entrance that respects reduced motion.
+Home follows the supplied minimal portfolio reference: a centered “Hi, I’m Kasra.” introduction, short tagline, full-body illustrated character, Melbourne location and Contact me link. A divided about section leads to About, with labelled GitHub and LinkedIn links below. Projects and detailed skills live on their dedicated routes. The shared header has the supplied KJ logo as its home link, right-aligned navigation, and a persistent theme toggle; navigation collapses into a menu on mobile. Three transparent character scenes rotate every 20 seconds with a soft crossfade: the original black-vest greeting, coding on a ThinkPad X1 Carbon Gen 13 in a gaming room, and software architecture at a holographic table in a black T-shirt and dark blue jeans. Scene selectors pause rotation; the play control resumes it. Reduced motion keeps manual selection and disables automatic rotation. The original character asset is preserved.
