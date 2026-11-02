@@ -35,9 +35,6 @@ export function ContactContent() {
               <h2 id="email-heading">Email</h2>
             </div>
             <p className="contact-email-address">{email.value}</p>
-            <p className="contact-email-caption">
-              A direct line for opportunities and collaborations.
-            </p>
             <div className="contact-email-actions">
               {email.href && (
                 <a className="button button-primary" href={email.href}>

@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 
 // Homepage copy follows the owner's supplied minimal portfolio reference.
 export const home = {
-  tagline: ["Software developer.", "Probably overthinking the details."],
+  tagline: ["Software developer."],
   about: profile.about,
   characterScenes: [
     {

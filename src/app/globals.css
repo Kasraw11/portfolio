@@ -70,8 +70,6 @@
     transparent 65%
   );
   --page-title-size: clamp(2.5rem, 4.5vw, 3.5rem);
-  --title-glass: rgb(255 255 255 / 3%);
-  --title-glow: 0 0 28px rgb(255 255 255 / 4%);
   --title-gradient: linear-gradient(145deg, #ffffff 15%, #d5d7df 65%, #a5a8b1);
   --hero-text-gradient: linear-gradient(
     135deg,
@@ -90,8 +88,6 @@
     #193b66 48%,
     #356799
   );
-  --title-glass: rgb(241 247 255 / 55%);
-  --title-glow: 0 0 28px rgb(48 85 135 / 10%);
   --title-gradient: linear-gradient(145deg, #0d1c33 15%, #1c395f 65%, #536e91);
   color-scheme: light;
   --background: #ffffff;
@@ -296,13 +292,6 @@ main.page-width:has(#home) {
 .page-title {
   display: inline-flex;
   width: fit-content;
-  padding: 10px 18px 12px;
-  border: 1px solid var(--glass-border);
-  border-radius: 18px;
-  background: var(--glass-sheen), var(--title-glass);
-  box-shadow: var(--glass-inset), var(--title-glow);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
   font-family: var(--font-display);
   font-size: var(--page-title-size);
   font-weight: 550;
@@ -319,21 +308,10 @@ main.page-width:has(#home) {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@media (prefers-reduced-transparency: reduce) {
-  .page-title {
-    background: var(--surface);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-}
 @media (forced-colors: active) {
   .page-title {
     background: Canvas;
     color: CanvasText;
-    border-color: CanvasText;
-    box-shadow: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
   }
   .page-title > span {
     background: none;
