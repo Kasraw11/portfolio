@@ -23,7 +23,16 @@ const technologyLogos: Partial<Record<string, string>> = {
 };
 
 export function ProjectRow({ project }: { project: Project }) {
-  const thumbnail = project.image ?? project.logo;
+  const thumbnailSource = project.image ?? project.logo;
+  const thumbnail = thumbnailSource && (
+    <Image
+      className={project.image ? styles.preview : styles.logo}
+      src={thumbnailSource}
+      alt={project.imageAlt ?? ""}
+      width={224}
+      height={126}
+    />
+  );
 
   return (
     <article id={project.id} className={styles.row}>
@@ -36,17 +45,18 @@ export function ProjectRow({ project }: { project: Project }) {
               const logo = technologyLogos[technology];
 
               return (
-                <li key={technology}>
-                  {logo && (
+                <li key={technology} title={technology}>
+                  {logo ? (
                     <Image
                       className={styles.tagLogo}
                       src={`/images/technologies/${logo}.svg`}
-                      alt=""
-                      width={14}
-                      height={14}
+                      alt={technology}
+                      width={20}
+                      height={20}
                     />
+                  ) : (
+                    <span className="sr-only">{technology}</span>
                   )}
-                  {technology}
                 </li>
               );
             })}
@@ -55,19 +65,17 @@ export function ProjectRow({ project }: { project: Project }) {
       </div>
       {(thumbnail || project.demoUrl) && (
         <div className={styles.actions}>
-          {thumbnail && (
-            <Image
-              className={project.image ? styles.preview : styles.logo}
-              src={thumbnail}
-              alt={project.imageAlt ?? ""}
-              width={144}
-              height={81}
-            />
-          )}
-          {project.demoUrl && (
-            <a className={styles.visit} href={project.demoUrl}>
-              Visit project<span className="sr-only">: {project.name}</span>
+          {project.demoUrl ? (
+            <a
+              className={styles.projectLink}
+              href={project.demoUrl}
+              aria-label={`Visit project: ${project.name}`}
+            >
+              {thumbnail}
+              <span className={styles.visit}>Visit project</span>
             </a>
+          ) : (
+            thumbnail
           )}
         </div>
       )}
