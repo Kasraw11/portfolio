@@ -1,23 +1,25 @@
 import { projects } from "@/data/projects";
-import { ProjectCard } from "@/components/projects/project-card";
+import { ProjectRow } from "./project-row";
+import styles from "./project-list.module.css";
 
 export function Projects() {
   return (
     <section
       id="projects"
-      className="projects-collection"
-      aria-label="Project collection"
+      className={styles.page}
+      aria-labelledby="projects-title"
     >
+      <h1 id="projects-title" className={styles.heading}>
+        Projects
+      </h1>
       {projects.length ? (
-        <div className="projects-grid">
+        <div className={styles.list}>
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectRow key={project.id} project={project} />
           ))}
         </div>
       ) : (
-        <p className="supporting-copy">
-          Projects are being prepared. Check back soon to explore the work.
-        </p>
+        <p className="supporting-copy">Projects are being prepared.</p>
       )}
     </section>
   );

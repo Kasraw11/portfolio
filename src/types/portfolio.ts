@@ -4,6 +4,7 @@ export interface Project {
   workType: "group" | "individual";
   description: string;
   technologies: readonly string[];
+  featuredTechnologies?: readonly string[];
   status:
     | "In progress"
     | "Completed"
@@ -14,6 +15,7 @@ export interface Project {
   year?: number;
   image?: string;
   imageAlt?: string;
+  logo?: string;
   overview: string;
   contribution: string;
   githubUrl?: string;

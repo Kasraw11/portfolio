@@ -61,9 +61,6 @@
   --cv-orbit-color: #ffffff;
   --cv-orbit-trail: rgb(225 225 235 / 45%);
   --cv-halo: rgb(225 225 235 / 16%);
-  --project-tag-background: #55585e;
-  --project-tag-text: #f5f5f7;
-  --project-tag-border: rgb(255 255 255 / 12%);
   --card-gradient: radial-gradient(
     ellipse at 0% 0%,
     var(--card-glow),
@@ -105,9 +102,6 @@
   --cv-orbit-color: #b6deff;
   --cv-orbit-trail: #448fea;
   --cv-halo: rgb(65 139 232 / 26%);
-  --project-tag-background: #152d50;
-  --project-tag-text: #ffffff;
-  --project-tag-border: #152d50;
   --line: rgb(29 29 31 / 10%);
   --line-hover: rgb(29 29 31 / 24%);
   --selection: #e0e7f0;
@@ -319,10 +313,6 @@ main.page-width:has(#home) {
   }
 }
 
-.projects-collection {
-  padding-bottom: 64px;
-}
-
 .contact-cards {
   display: grid;
   gap: 20px;
@@ -371,11 +361,6 @@ main.page-width:has(#home) {
 .home-skill-list dd {
   margin: 0;
   color: var(--muted);
-}
-.project-category {
-  font-size: 12px;
-  color: var(--accent-2);
-  margin-bottom: 16px;
 }
 @media (min-width: 768px) {
   .home-highlights {
@@ -689,68 +674,6 @@ a.contact-card:hover {
   color: var(--muted);
   font-size: 13px;
 }
-.projects-grid {
-  display: grid;
-  gap: 24px;
-  align-items: stretch;
-}
-.project-card {
-  overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-card);
-  transition: border-color var(--motion-fast);
-  display: flex;
-  flex-direction: column;
-}
-.project-card:focus-within,
-.project-card:hover {
-  border-color: var(--line-hover);
-}
-.project-image {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--surface-2);
-  border-bottom: 1px solid var(--line);
-}
-.project-image img {
-  object-fit: cover;
-}
-.project-body {
-  padding: clamp(24px, 3vw, 36px);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.project-title {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-.project-card h2 {
-  font-size: 24px;
-  font-weight: 550;
-  letter-spacing: -0.025em;
-}
-.project-status {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.supporting-copy {
-  color: var(--muted);
-  line-height: 1.75;
-}
-.project-card .supporting-copy {
-  font-size: 15px;
-}
-.project-body > .technology-list {
-  margin-block: 18px 24px;
-}
 .technology-list {
   list-style: none;
   padding: 0;
@@ -766,68 +689,6 @@ a.contact-card:hover {
   border-radius: 8px;
   background: var(--surface-2);
   color: var(--muted);
-}
-.project-card .technology-list li {
-  background: var(--project-tag-background);
-  color: var(--project-tag-text);
-  border: 1px solid var(--project-tag-border);
-}
-.project-overview {
-  border-top: 1px solid var(--line);
-  margin-top: auto;
-}
-.project-overview summary {
-  min-height: 48px;
-  padding-top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 12px;
-}
-.project-overview summary::-webkit-details-marker {
-  display: none;
-}
-.project-overview summary:hover {
-  color: var(--accent-2);
-}
-.project-overview summary svg {
-  color: var(--accent-2);
-  transition: transform var(--motion-fast);
-}
-.project-overview[open] summary svg {
-  transform: rotate(90deg);
-}
-.project-details-content {
-  padding-block: 8px 12px;
-}
-.project-details-content section + section {
-  margin-top: 24px;
-}
-.project-details-content h3 {
-  margin: 0 0 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-.project-details-content .supporting-copy {
-  font-size: 14px;
-  line-height: 1.8;
-}
-.project-details-content .project-links {
-  margin-top: 20px;
-}
-.project-hide-label,
-.project-overview[open] .project-show-label {
-  display: none;
-}
-.project-overview[open] .project-hide-label {
-  display: inline;
-}
-.project-links {
-  display: flex;
-  gap: 20px;
 }
 .interest-list {
   display: flex;
@@ -1829,7 +1690,6 @@ a.contact-card:hover {
 
 /* One shared material recipe keeps glass consistent on every route. */
 .nav-shell,
-.project-card,
 .contact-card,
 .contact-email-panel {
   background: var(--surface);
@@ -1840,7 +1700,6 @@ a.contact-card:hover {
   (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
 ) {
   .nav-shell,
-  .project-card,
   .contact-card,
   .contact-email-panel,
   .button-secondary {
@@ -1853,11 +1712,6 @@ a.contact-card:hover {
     background: var(--glass-sheen), var(--glass-navigation-fill);
     -webkit-backdrop-filter: blur(28px) saturate(125%);
     backdrop-filter: blur(28px) saturate(125%);
-  }
-}
-@media (min-width: 640px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (min-width: 768px) {
@@ -1921,13 +1775,9 @@ a.contact-card:hover {
   .primary-nav.is-open {
     gap: 6px;
   }
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 /* Quiet depth across content cards; movement is reserved for actionable cards. */
 .about-skill-card,
-.project-card,
 .contact-card,
 .contact-email-panel {
   background: var(--card-gradient), var(--glass-sheen), var(--glass-fill);
@@ -1948,7 +1798,6 @@ a.contact-card:hover {
 @media (hover: hover) and (pointer: fine) and (forced-colors: none) {
   :is(
     .about-skill-card,
-    .project-card,
     .contact-card,
     .contact-email-panel,
     .profile-rail
@@ -1959,7 +1808,6 @@ a.contact-card:hover {
 @media (forced-colors: none) {
   :is(
     .about-skill-card,
-    .project-card,
     .contact-card,
     .contact-email-panel,
     .profile-rail
@@ -1977,13 +1825,11 @@ a.contact-card:hover {
     animation-delay: 80ms;
   }
   details[open] > .about-extra-content,
-  details[open] > .cv-document,
-  .project-overview[open] > .project-details-content {
+  details[open] > .cv-document {
     animation: content-in 240ms ease-out;
   }
   @media (hover: hover) and (pointer: fine) {
-    a.contact-card:hover,
-    .project-card:hover {
+    a.contact-card:hover {
       transform: translateY(-3px);
       border-color: var(--line-hover);
     }
@@ -2022,7 +1868,6 @@ a.contact-card:hover {
     backdrop-filter: none;
   }
   .nav-shell,
-  .project-card,
   .contact-card,
   .contact-email-panel,
   .button-secondary {
@@ -2067,7 +1912,6 @@ a.contact-card:hover {
     background-image: none;
   }
   .nav-shell,
-  .project-card,
   .contact-card,
   .contact-email-panel,
   .button-secondary {
@@ -2082,7 +1926,6 @@ a.contact-card:hover {
     scrollbar-color: auto;
   }
   .button,
-  .project-card,
   .theme-toggle {
     border: 1px solid ButtonText;
     box-shadow: none;
