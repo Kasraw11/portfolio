@@ -10,12 +10,24 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Career guidance and personalised planning for young Australians.",
-    technologies: ["Next.js", "TypeScript", "Python", "FastAPI", "AWS"],
+      "Helps Australian students explore careers and identify the skills they need. I led development of the career suggestions and personalised roadmap.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "MySQL",
+      "AWS",
+    ],
+    featuredTechnologies: ["Next.js", "FastAPI", "MySQL"],
     overview:
       "PathFolio is a career navigation platform for young people in Australia. It combines labour-market indicators with individual skills, education, and career goals to support career exploration, forecasting, and personalised roadmaps. It is my capstone project at Monash University.",
     contribution:
-      "I designed and implemented the frontend and implemented the backend for several features.",
+      "I led development of Career Suggestions and the Personalised Roadmap across the frontend and backend. I helped bring both features into a single Personalisation page so students could choose a suggested career and see what to work on next.",
+    demoUrl: "https://path-folio.com/",
+    image: "/images/projects/pathfolio.webp",
+    imageAlt:
+      "PathFolio homepage artwork showing a student at a branching path",
   },
   {
     id: "auditrax",
@@ -25,13 +37,15 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "An AI-assisted platform for managing ISO 27001 audit readiness.",
+      "Helps teams organise evidence and map it to ISO 27001 controls. I designed the evidence and control-mapping workflows and built application components.",
     technologies: ["JavaScript", "TypeScript", "CSS", "Python"],
+    featuredTechnologies: ["TypeScript", "Python"],
     overview:
       "Auditrax helps teams prepare for ISO 27001 audits by bringing compliance evidence, control mapping, and audit-readiness gaps into a central platform. Its workflows support organising evidence and identifying areas that need attention before an audit.",
     contribution:
       "I contributed to system architecture, frontend design, and backend development for an ISO 27001 audit-readiness platform. I designed workflows for centralised compliance evidence, control mapping, and identifying audit-readiness gaps, and built interface and application components in a JavaScript and TypeScript codebase.",
     demoUrl: "https://auditrax.vercel.app/",
+    logo: "/images/projects/auditrax.webp",
   },
   {
     id: "faunalens",
@@ -41,13 +55,16 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "A wildlife observation platform with AI-assisted species detection.",
+      "Helps users organise wildlife observations and identify species. I built media management interfaces and integrated authentication and secure AWS uploads.",
     technologies: ["Next.js", "TypeScript", "Python", "AWS", "GCP"],
+    featuredTechnologies: ["Next.js", "AWS", "GCP"],
     overview:
       "FaunaLens, also called Aussie EcoLens, connects an image library and media uploads with a team-built species-detection pipeline. The platform includes authentication, media management, notifications, and settings, with frontend flows integrated into serverless AWS and GCP services.",
     contribution:
       "I developed frontend features for media management, the image library, uploads, notifications, and settings. I integrated authentication and implemented secure media uploads using AWS, then tested interfaces and integrated frontend flows with the team's serverless AWS/GCP species-detection pipeline.",
-    demoUrl: "https://fauna-lens.vercel.app/login",
+    demoUrl: "https://fauna-lens.vercel.app/",
+    image: "/images/projects/faunalens.webp",
+    imageAlt: "FaunaLens homepage artwork featuring Australian wildlife",
   },
   {
     id: "smartloop",
@@ -57,7 +74,8 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Find recycling, reuse, and repair services and local sustainability events.",
+      "Helps people find local recycling, reuse and repair services and sustainability events. I built registration, authentication and separate user and admin dashboards.",
+    featuredTechnologies: ["Vue.js 3", "Firebase", "Cloud Firestore"],
     technologies: [
       "Vue.js 3",
       "JavaScript",
