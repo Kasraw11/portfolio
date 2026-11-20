@@ -88,46 +88,6 @@ export const projects: readonly Project[] = [
       "SmartLoop is a sustainability web application that helps users find recycling, reuse, and repair services and discover community events. It supports event registration and ratings, with separate user and admin dashboards. Authentication and role-based access control access to the platform, while Firestore and Cloud Functions support data storage and server-side functionality.",
     contribution:
       "I developed responsive interfaces, authentication, role-based access, routing, form validation, user and admin dashboards, event registration, and ratings. I integrated Cloud Firestore and Firebase Cloud Functions to support database operations and server-side functionality.",
-  },
-  // Earlier projects from the original CV; years were not supplied.
-  {
-    id: "course-registration",
-    workType: "individual",
-    name: "Online Course Selection and Registration",
-    category: "Web application",
-    status: "CV project",
-    description:
-      "A course selection app with student and administration tools.",
-    technologies: ["React", "JavaScript"],
-    overview:
-      "This web application lets students select and manage their courses. Administrators can manage courses and student records through dedicated tools. The interface is built with React.",
-    contribution:
-      "I developed a React web application for students to select and manage their courses, with administration tools for managing courses and student records.",
-  },
-  {
-    id: "android-calculator",
-    workType: "individual",
-    name: "Android Calculator",
-    category: "Android application",
-    status: "CV project",
-    description: "A simple Android app for everyday mathematical calculations.",
-    technologies: ["Java", "Android"],
-    overview:
-      "An Android application for performing basic mathematical calculations. Built using Java, it focuses on straightforward calculator functionality.",
-    contribution:
-      "I built an Android application using Java to perform basic mathematical calculations.",
-  },
-  {
-    id: "food-ordering-design",
-    workType: "individual",
-    name: "Online Food Ordering System Design",
-    category: "Software design",
-    status: "CV project",
-    description: "A UML design study of an online food ordering system.",
-    technologies: ["Rational Rose", "UML"],
-    overview:
-      "A software design study documenting how an online food ordering system is structured and how its ordering workflows and interactions operate. The project uses UML diagrams in Rational Rose to describe the system.",
-    contribution:
-      "I analysed and designed an online food ordering system, documenting its structure, workflows, and interactions using UML diagrams in Rational Rose.",
+    demoUrl: "https://smartloop-two.vercel.app/",
   },
 ];
