@@ -88,6 +88,7 @@ export const projects: readonly Project[] = [
       "SmartLoop is a sustainability web application that helps users find recycling, reuse, and repair services and discover community events. It supports event registration and ratings, with separate user and admin dashboards. Authentication and role-based access control access to the platform, while Firestore and Cloud Functions support data storage and server-side functionality.",
     contribution:
       "I developed responsive interfaces, authentication, role-based access, routing, form validation, user and admin dashboards, event registration, and ratings. I integrated Cloud Firestore and Firebase Cloud Functions to support database operations and server-side functionality.",
+    demoUrl: "https://smartloop-two.vercel.app/",
   },
   // Earlier projects from the original CV; years were not supplied.
   {

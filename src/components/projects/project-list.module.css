@@ -6,15 +6,11 @@
   font-display: swap;
 }
 
-.page,
-.detail {
+.page {
+  max-width: 880px;
   margin-inline: auto;
   padding-block: clamp(36px, 6vw, 64px) clamp(48px, 8vw, 88px);
   font-family: "Portfolio Geist", var(--font-body);
-}
-
-.page {
-  max-width: 880px;
 }
 
 .heading {
@@ -25,11 +21,10 @@
 }
 
 .row {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 20px 32px;
+  gap: 8px 32px;
   padding-block: 24px;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 108px;
@@ -47,7 +42,7 @@
 }
 
 .copy > p,
-.detail section > p {
+.detailBody section > p {
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 0.9375rem;
@@ -78,27 +73,38 @@
     monospace;
 }
 
-.website,
-.back {
+.summary,
+.source {
   color: var(--muted);
   font-size: 0.8125rem;
   font-weight: 500;
   text-decoration: none;
 }
 
-.website {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin-top: 10px;
-  padding-block: 4px;
+.summary {
+  width: fit-content;
+  padding: 7px 4px 7px 0;
+  cursor: pointer;
 }
 
-.website:hover,
-.website:focus-visible,
-.back:hover,
-.back:focus-visible {
+.summary:hover,
+.summary:focus-visible,
+.source:hover,
+.source:focus-visible {
   color: var(--foreground);
+}
+
+.disclosure {
+  grid-column: 1 / -1;
+}
+
+.collapseLabel,
+.disclosure[open] .expandLabel {
+  display: none;
+}
+
+.disclosure[open] .collapseLabel {
+  display: inline;
 }
 
 .actions {
@@ -108,8 +114,7 @@
 }
 
 .preview,
-.logo,
-.detailImage {
+.logo {
   display: block;
   border-radius: 6px;
 }
@@ -140,15 +145,8 @@
   white-space: nowrap;
 }
 
-/* Extend the detail link across the row while keeping the website link separate. */
-.visit::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-}
-
-.row:focus-within .visit,
-.row:target .visit {
+.visit:hover,
+.visit:focus-visible {
   background: var(--action);
   color: var(--on-accent);
 }
@@ -162,11 +160,6 @@
   .row:hover .title {
     color: var(--foreground);
   }
-
-  .row:hover .visit {
-    background: var(--action);
-    color: var(--on-accent);
-  }
 }
 
 @media (hover: hover) and (pointer: fine) and (forced-colors: none) and (prefers-reduced-motion: no-preference) {
@@ -176,21 +169,16 @@
   }
 }
 
-.detail {
-  max-width: 720px;
+.detailBody {
+  max-width: 65ch;
+  padding-block: 10px 4px;
+  display: grid;
+  gap: 16px;
 }
 
-.detail h1 {
-  margin: 16px 0 2px;
-  font-size: clamp(1.75rem, 4vw, 2.375rem);
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-}
-
-.detail h2 {
+.detailBody h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -200,25 +188,8 @@
   font-size: 0.875rem;
 }
 
-.detailImage,
-.detail > .logo,
-.detail section,
-.detail > .tags {
-  margin-top: 24px;
-}
-
-.detailImage {
-  width: 100%;
-  max-width: 560px;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.detailLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.source {
+  justify-self: start;
 }
 
 @media (max-width: 560px) {
@@ -244,8 +215,9 @@
     min-height: 44px;
   }
 
-  .visit::after {
-    content: none;
+  .summary {
+    min-height: 44px;
+    padding-block: 12px;
   }
 }
 
