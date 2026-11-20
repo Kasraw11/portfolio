@@ -63,6 +63,9 @@
 }
 
 .tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 3px 8px;
   border-radius: 5px;
   background: var(--surface-2);
@@ -71,6 +74,11 @@
     0.75rem/1.45 ui-monospace,
     "Cascadia Mono",
     monospace;
+}
+
+.tagLogo {
+  flex: none;
+  object-fit: contain;
 }
 
 .summary,

@@ -2,6 +2,26 @@ import Image from "next/image";
 import type { Project } from "@/types/portfolio";
 import styles from "./project-list.module.css";
 
+const technologyLogos: Partial<Record<string, string>> = {
+  "Next.js": "nextjs-icon",
+  TypeScript: "typescript-icon",
+  Python: "python",
+  FastAPI: "fastapi-icon",
+  MySQL: "mysql-icon",
+  "AWS EC2": "aws-ec2",
+  "AWS RDS": "aws-rds",
+  JavaScript: "javascript",
+  CSS: "css",
+  "AWS S3": "aws-s3",
+  "AWS Cognito": "aws-cognito",
+  "Google Cloud": "google-cloud",
+  "Vue.js 3": "vue",
+  Firebase: "firebase-icon",
+  "Cloud Firestore": "firebase-icon",
+  "Cloud Functions": "google-cloud-functions",
+  Bootstrap: "bootstrap",
+};
+
 export function ProjectRow({ project }: { project: Project }) {
   const thumbnail = project.image ?? project.logo;
 
@@ -12,11 +32,24 @@ export function ProjectRow({ project }: { project: Project }) {
         <p>{project.description}</p>
         {project.technologies.length > 0 && (
           <ul className={styles.tags} aria-label="Technologies">
-            {(project.featuredTechnologies ?? project.technologies).map(
-              (technology) => (
-                <li key={technology}>{technology}</li>
-              ),
-            )}
+            {project.technologies.map((technology) => {
+              const logo = technologyLogos[technology];
+
+              return (
+                <li key={technology}>
+                  {logo && (
+                    <Image
+                      className={styles.tagLogo}
+                      src={`/images/technologies/${logo}.svg`}
+                      alt=""
+                      width={14}
+                      height={14}
+                    />
+                  )}
+                  {technology}
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
@@ -52,7 +85,7 @@ export function ProjectRow({ project }: { project: Project }) {
               : "Individual project"}
           </p>
           <section>
-            <h3>About the project</h3>
+            <h3>{project.overviewTitle}</h3>
             <p>{project.overview}</p>
           </section>
           <section>

@@ -1,79 +1,16 @@
-# Kasra portfolio
+# Kasra Janesar’s Portfolio
 
-A Next.js App Router portfolio using TypeScript, Tailwind CSS, native system typography, persistent dark/light themes, and restrained glass surfaces.
+My personal portfolio, built with Next.js, TypeScript, and Tailwind CSS. It showcases selected software projects and my experience.
+
+[Visit kasrajr.com](https://kasrajr.com)
 
 ## Run locally
 
-Use Node.js 22.18+ (developed with Node.js 24).
+Requires Node.js 22.18 or later.
 
-```powershell
-cd D:\Projects\portfolio
-npm.cmd install
-npm.cmd run dev
+```bash
+npm ci
+npm run dev
 ```
 
-Open http://localhost:3000. On PowerShell, use npm.cmd to avoid script execution restrictions.
-
-Production builds use Next.js static export. Run `npm.cmd run build` to generate
-`out/`, then `npm.cmd start` to preview it locally. Cloudflare Pages publishes
-`out/` directly; it does not run `next start`. See the
-[Cloudflare Pages deployment guide](docs/cloudflare-pages.md) for exact dashboard
-settings, image handling, and security headers.
-
-## Pages and files
-
-- src/app: Home, About, Projects, Contact; global CSS theme and motion tokens.
-- src/components: modular layout, home, about, project, and UI components.
-- src/data/profile.ts: biography, contacts, and independent Home/About photo paths.
-- src/data/home.ts: homepage introduction, about copy, and three character scenes.
-- src/data/background.ts: experience, education, six soft skills, other tools, certificates, languages, and interests. No courses.
-- src/data/skills.ts: Programming, Frontend, Backend & APIs, Databases, Cloud & Tools.
-- src/data/projects.ts: current project descriptions, contributions, and technologies.
-- src/data/cv.ts: structured CV identity, education, experience, project entries, skill groups, and languages, shown inside a closed-by-default disclosure with section dividers.
-- archive/cv/Kasra_Janesar_CV_2026.docx: preserved source document, outside the public web root.
-- public/images/portraits/homepage.jpeg and about.jpeg: supplied photos, framed through CSS.
-- public/images/hero/: original character PNG plus optimized greeting, ThinkPad gaming-room coding, and holographic architecture WebP illustrations. kasra-scenes.provenance.json records the built-in image-generation prompts and references.
-- docs/DESIGN.md: visual contract and theme tokens.
-- docs/PRODUCT.md: product scope and content rules.
-- docs/project-structure.md: folder responsibilities, local artifacts, and maintenance decisions.
-- docs/reports/DEPENDENCY_AUDIT.txt: preserved dependency maintenance report.
-- docs/cv: preserved two-page CV export and its preview images.
-- scripts/cv: optional PDF generator and its preserved input snapshot.
-
-Keep Next.js, TypeScript, ESLint, PostCSS, and package configuration at the repository root, alongside README.md, skills-lock.json, .agents/, and .impeccable/design.json. All other project Markdown lives in docs/, including [AGENTS.md](docs/AGENTS.md) and [CLAUDE.md](docs/CLAUDE.md). Coding assistants may need to be pointed explicitly to these relocated instructions. Next.js may recreate a root AGENTS.md through its development-time agent integration. See [the project structure guide](docs/project-structure.md) for the directory tree and cleanup decisions.
-
-The latest source is Kasra_Janesar_CV_2026.docx. It supplies Monash education, updated employment dates, confirmed project contributions/technologies, and the LinkedIn URL. Supporting tools, certificates, and interests are retained from the earlier CV. Older CV documents and page images are preserved in archive/cv, outside the public web root. Do not reintroduce stale PDF text when updating the current document.
-
-## Design
-
-Dark retains its black/gray palette, neutral radial glow, and light-gray actions. Light uses a white canvas with dark navy accents and actions. Only light-mode primary buttons have the new navy glow. Variables in src/app/globals.css centralize colors, radial card gradients, glass material, typography, radii, and motion. Static gradient cards avoid visual noise. Interactive cards lift slightly on hover; introductions and disclosure content use brief entrance animations. Reduced motion, reduced transparency, and forced colors are supported. See [docs/DESIGN.md](docs/DESIGN.md) for the current layout contract.
-
-Technical and soft skills occupy two visible cards, stacking on narrow screens. Other Tools is independent. The CV preview stays collapsed until opened. CV downloads are not offered; source documents are preserved outside public.
-
-## Verify
-
-```powershell
-npm.cmd run build
-npm.cmd run typecheck
-npm.cmd run lint
-npm.cmd run format:check
-npm.cmd audit --omit=dev
-```
-
-The former tests/ directory and its npm commands were removed at the owner's request. TypeScript checking, ESLint, and production builds remain available. Use local browser checks to verify routes, asset loading, and both themes after changes. Historical test results in the dependency report describe the repository before test removal.
-
-Production hosting must redirect HTTP to HTTPS; verify TLS and security headers again on the deployed domain. The CSP permits inline scripts for static Next.js hydration, so it does not fully prevent inline script injection. CV documents are not served publicly; the About page retains the HTML preview. Files in archive are not served by Next.js, but remain visible to anyone with repository access.
-
-Security review (7 October 2026): the production dependency audit reported zero vulnerabilities. The full audit reported five high-severity package entries from one unpatched development-only braces advisory, [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm), through eslint-config-next. No website request input reaches this linting chain in the current source. Run lint only against trusted project configuration and revisit the advisory before future deployments. Do not force npm's suggested downgrade to Next.js 14 tooling.
-
-## Next refinements
-
-Add real project screenshots, a PathFolio public link when available, social metadata and a favicon. Keep contribution wording accurate and avoid claiming unconfirmed deployment or outcomes. No database, authentication, or CMS has been added. Cloudflare Pages static-export configuration is provided; this repository change does not deploy the site.
-
-The About toolkit uses skillGroups in src/data/skills.ts. Unused homepage highlights and the retired featured-project layout have been removed.
-
-Project cards show a short summary directly below the title, followed by technology tags. View project opens separate About the project and My contribution sections from the overview and contribution data fields; the control changes to Hide details. Newest projects remain first, without year labels.
-
-The footer displays only copyright and accessible email, LinkedIn, and GitHub icons. The root template provides route transitions; PageContent progressively enhances marked cards with one-time viewport reveals. Reduced-motion settings and no-JavaScript rendering keep content immediately usable.
-
-Home follows the supplied minimal portfolio reference: a centered “Hi, I’m Kasra.” introduction, short tagline, full-body illustrated character, Melbourne location and Contact me link. A divided about section leads to About, with labelled GitHub and LinkedIn links below. Projects and detailed skills live on their dedicated routes. The shared header has the supplied KJ logo as its home link, right-aligned navigation, and a persistent theme toggle; navigation collapses into a menu on mobile. Three transparent character scenes rotate every 20 seconds with a soft crossfade: the original black-vest greeting, coding on a ThinkPad X1 Carbon Gen 13 in a gaming room, and software architecture at a holographic table in a black T-shirt and dark blue jeans. Scene selectors pause rotation; the play control resumes it. Reduced motion keeps manual selection and disables automatic rotation. The original character asset is preserved.
+Open [http://localhost:3000](http://localhost:3000). Run `npm run build` to generate the static site in `out/`.

@@ -10,20 +10,21 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Helps Australian students explore careers and identify the skills they need. I led development of the career suggestions and personalised roadmap.",
+      "Australian students can explore careers, compare employment outlooks, and see which skills to develop for a role that interests them.",
     technologies: [
       "Next.js",
       "TypeScript",
       "Python",
       "FastAPI",
       "MySQL",
-      "AWS",
+      "AWS EC2",
+      "AWS RDS",
     ],
-    featuredTechnologies: ["Next.js", "FastAPI", "MySQL"],
+    overviewTitle: "From career options to a plan",
     overview:
-      "PathFolio is a career navigation platform for young people in Australia. It combines labour-market indicators with individual skills, education, and career goals to support career exploration, forecasting, and personalised roadmaps. It is my capstone project at Monash University.",
+      "For our Monash capstone, we connected Australian labour-market data with a student’s interests, education, and skills. The tools let students weigh a role’s prospects alongside what it would take to pursue it.",
     contribution:
-      "I led development of Career Suggestions and the Personalised Roadmap across the frontend and backend. I helped bring both features into a single Personalisation page so students could choose a suggested career and see what to work on next.",
+      "I led development of Career Suggestions and the Personalised Roadmap across the frontend and backend. After mentor feedback, our team combined them on one page so choosing a role and seeing the next steps became part of the same flow.",
     demoUrl: "https://path-folio.com/",
     image: "/images/projects/pathfolio.webp",
     imageAlt:
@@ -37,15 +38,16 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Helps teams organise evidence and map it to ISO 27001 controls. I designed the evidence and control-mapping workflows and built application components.",
-    technologies: ["JavaScript", "TypeScript", "CSS", "Python"],
-    featuredTechnologies: ["TypeScript", "Python"],
+      "Preparing for an ISO 27001 audit means knowing which controls have evidence and where gaps remain. Auditrax gives teams one place to do both.",
+    technologies: ["Next.js", "JavaScript", "TypeScript", "CSS", "Python"],
+    overviewTitle: "Making evidence easier to trace",
     overview:
-      "Auditrax helps teams prepare for ISO 27001 audits by bringing compliance evidence, control mapping, and audit-readiness gaps into a central platform. Its workflows support organising evidence and identifying areas that need attention before an audit.",
+      "As a team gathers policies, records, and other evidence, it can see which controls those documents support and where more evidence is needed before the audit.",
     contribution:
-      "I contributed to system architecture, frontend design, and backend development for an ISO 27001 audit-readiness platform. I designed workflows for centralised compliance evidence, control mapping, and identifying audit-readiness gaps, and built interface and application components in a JavaScript and TypeScript codebase.",
+      "My work centred on how teams collect evidence, connect it to controls, and identify gaps. I designed those workflows, built interface and application components, and contributed to the architecture and backend.",
     demoUrl: "https://auditrax.vercel.app/",
-    logo: "/images/projects/auditrax.webp",
+    image: "/images/projects/auditrax.webp",
+    imageAlt: "Auditrax homepage introducing its audit-readiness platform",
   },
   {
     id: "faunalens",
@@ -55,13 +57,20 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Helps users organise wildlife observations and identify species. I built media management interfaces and integrated authentication and secure AWS uploads.",
-    technologies: ["Next.js", "TypeScript", "Python", "AWS", "GCP"],
-    featuredTechnologies: ["Next.js", "AWS", "GCP"],
+      "Upload a wildlife photo, get an AI-assisted species identification, and manage your sightings in one library.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "AWS S3",
+      "AWS Cognito",
+      "Google Cloud",
+    ],
+    overviewTitle: "What happens after an upload",
     overview:
-      "FaunaLens, also called Aussie EcoLens, connects an image library and media uploads with a team-built species-detection pipeline. The platform includes authentication, media management, notifications, and settings, with frontend flows integrated into serverless AWS and GCP services.",
+      "The media library connects to a team-built species detection pipeline that spans AWS and Google Cloud. Users can manage their photos and revisit their observations from the same app.",
     contribution:
-      "I developed frontend features for media management, the image library, uploads, notifications, and settings. I integrated authentication and implemented secure media uploads using AWS, then tested interfaces and integrated frontend flows with the team's serverless AWS/GCP species-detection pipeline.",
+      "On the frontend, I built the media library, upload, notifications, and settings screens. I also integrated sign-in and secure AWS uploads, then tested those flows with the team’s detection pipeline.",
     demoUrl: "https://fauna-lens.vercel.app/",
     image: "/images/projects/faunalens.webp",
     imageAlt: "FaunaLens homepage artwork featuring Australian wildlife",
@@ -74,8 +83,7 @@ export const projects: readonly Project[] = [
     year: 2026,
     status: "CV project",
     description:
-      "Helps people find local recycling, reuse and repair services and sustainability events. I built registration, authentication and separate user and admin dashboards.",
-    featuredTechnologies: ["Vue.js 3", "Firebase", "Cloud Firestore"],
+      "Where can I recycle this, get it repaired, or find a local workshop? SmartLoop brings those everyday questions together in one place.",
     technologies: [
       "Vue.js 3",
       "JavaScript",
@@ -84,10 +92,13 @@ export const projects: readonly Project[] = [
       "Cloud Functions",
       "Bootstrap",
     ],
+    overviewTitle: "Local recycling and reuse",
     overview:
-      "SmartLoop is a sustainability web application that helps users find recycling, reuse, and repair services and discover community events. It supports event registration and ratings, with separate user and admin dashboards. Authentication and role-based access control access to the platform, while Firestore and Cloud Functions support data storage and server-side functionality.",
+      "Residents can look up what to do with household items, find nearby services, and discover sustainability events they can join and rate.",
     contribution:
-      "I developed responsive interfaces, authentication, role-based access, routing, form validation, user and admin dashboards, event registration, and ratings. I integrated Cloud Firestore and Firebase Cloud Functions to support database operations and server-side functionality.",
+      "I built SmartLoop independently with Vue and Firebase. The two dashboards serve residents and administrators, with role-based access and Firebase services handling registration, ratings, and data storage.",
     demoUrl: "https://smartloop-two.vercel.app/",
+    image: "/images/projects/smartloop.webp",
+    imageAlt: "SmartLoop homepage with recycling guidance and community events",
   },
 ];
