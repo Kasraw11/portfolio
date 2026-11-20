@@ -56,29 +56,29 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   list-style: none;
   margin: 12px 0 0;
   padding: 0;
 }
 
-.tags li {
+.tags li:has(img) {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 8px;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border-radius: 5px;
   background: var(--surface-2);
-  color: var(--foreground);
-  font:
-    0.75rem/1.45 ui-monospace,
-    "Cascadia Mono",
-    monospace;
 }
 
 .tagLogo {
-  flex: none;
   object-fit: contain;
+}
+
+.tagLogo[src$="/nextjs-icon.svg"] {
+  background: #fff;
+  border-radius: 50%;
 }
 
 .summary,
@@ -115,10 +115,16 @@
   display: inline;
 }
 
-.actions {
+.actions,
+.projectLink {
   display: grid;
   justify-items: end;
+}
+
+.projectLink {
   gap: 8px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .preview,
@@ -129,9 +135,13 @@
 
 .preview,
 .logo {
-  width: 144px;
-  height: 81px;
+  width: 100%;
+  max-width: 224px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
 }
 
 .logo {
@@ -153,10 +163,16 @@
   white-space: nowrap;
 }
 
-.visit:hover,
-.visit:focus-visible {
+.projectLink:hover .visit,
+.projectLink:focus-visible .visit {
   background: var(--action);
   color: var(--on-accent);
+}
+
+.projectLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
 .row:focus-within .title,
@@ -207,16 +223,13 @@
     padding-block: 20px;
   }
 
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .projectLink:has(img) {
+    width: min(100%, 360px);
   }
 
   .preview,
   .logo {
-    width: 112px;
-    height: 63px;
+    max-width: 360px;
   }
 
   .visit {
