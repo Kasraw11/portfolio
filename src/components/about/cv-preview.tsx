@@ -1,6 +1,13 @@
 import { cvIdentity, cvSections, type CvEntry } from "@/data/cv";
 import { profile } from "@/data/profile";
 
+const omittedSections = new Set([
+  "technical-skills",
+  "soft-skills",
+  "languages",
+]);
+const previewSections = cvSections.filter(({ id }) => !omittedSections.has(id));
+
 function CvEntryContent({ entry }: { entry: CvEntry }) {
   return (
     <div className="cv-entry">
@@ -77,7 +84,7 @@ export function CvPreview() {
               ))}
             </ul>
           </header>
-          {cvSections.map((section) => (
+          {previewSections.map((section) => (
             <section
               className="cv-content-section"
               key={section.id}

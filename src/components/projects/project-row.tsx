@@ -96,12 +96,6 @@ export function ProjectRow({ project }: { project: Project }) {
             <h3>{project.overviewTitle}</h3>
             <p>{project.overview}</p>
           </section>
-          <section>
-            <h3>
-              {project.workType === "group" ? "My contribution" : "My work"}
-            </h3>
-            <p>{project.contribution}</p>
-          </section>
           {project.githubUrl && (
             <a className={styles.source} href={project.githubUrl}>
               GitHub
