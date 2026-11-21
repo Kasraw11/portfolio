@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { profile } from "@/data/profile";
 import { experience, education, certificates } from "@/data/background";
 
@@ -84,10 +85,20 @@ export function AboutContent() {
                 key={item.qualification}
                 data-reveal
               >
-                <p className="career-date">{item.dates}</p>
-                <h3>{item.qualification}</h3>
-                <p>{item.institution}</p>
-                <p className="supporting-copy">{item.detail}</p>
+                <Image
+                  className="education-logo"
+                  src={item.logo}
+                  alt=""
+                  width={64}
+                  height={64}
+                  sizes="(max-width: 480px) 44px, 64px"
+                />
+                <div>
+                  <h3>{item.qualification}</h3>
+                  <p className="education-meta">
+                    {item.institution} <span>· {item.dates}</span>
+                  </p>
+                </div>
               </article>
             ))}
           </div>

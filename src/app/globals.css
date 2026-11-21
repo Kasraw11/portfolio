@@ -874,7 +874,42 @@ a.contact-card:hover {
 }
 .education-list {
   display: grid;
-  gap: 28px;
+  gap: 20px;
+}
+.education-primary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(10px, 2vw, 16px);
+}
+.education-logo {
+  width: 64px;
+  height: 64px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  object-fit: contain;
+}
+.education-meta {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .education-logo {
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .education-primary h3 {
+    font-size: clamp(13px, 4vw, 17px);
+  }
+  .education-meta {
+    font-size: clamp(11px, 3.3vw, 14px);
+  }
 }
 .about-skills-grid {
   display: grid;
@@ -1079,10 +1114,6 @@ a.contact-card:hover {
     grid-template-columns: 1.1fr 1fr;
   }
 }
-.education-primary > p:not(.career-date) {
-  font-size: 14px;
-  margin-top: 8px;
-}
 .about-more-education {
   margin-top: 20px;
   font-size: 13px;
@@ -1182,7 +1213,6 @@ a.contact-card:hover {
   font-size: 22px;
 }
 @media (min-width: 640px) {
-  .education-list,
   .about-extras {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
