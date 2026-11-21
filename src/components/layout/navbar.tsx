@@ -24,7 +24,7 @@ export function Navbar() {
         }
       }}
     >
-      <div className={`page-width ${styles.inner}`}>
+      <div className={styles.inner}>
         <Link
           href="/"
           className={styles.brand}
@@ -36,40 +36,38 @@ export function Navbar() {
             alt=""
             width={192}
             height={192}
-            sizes="44px"
+            sizes="36px"
             loading="eager"
             className={styles.brandImage}
           />
         </Link>
-        <div className={styles.actions}>
-          <ThemeToggle />
-          <button
-            ref={toggleRef}
-            className={styles.menuToggle}
-            type="button"
-            aria-expanded={isOpen}
-            aria-controls="primary-navigation"
-            aria-label={
-              isOpen
-                ? "Close navigation menu"
-                : `Open navigation menu${currentPage ? `, current page: ${currentPage}` : ""}`
-            }
-            onClick={() => setIsOpen(!isOpen)}
+        <button
+          ref={toggleRef}
+          className={styles.menuToggle}
+          type="button"
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
+          aria-label={
+            isOpen
+              ? "Close navigation menu"
+              : `Open navigation menu${currentPage ? `, current page: ${currentPage}` : ""}`
+          }
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? "Close" : (currentPage ?? "Menu")}
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            aria-hidden="true"
           >
-            {isOpen ? "Close" : (currentPage ?? "Menu")}
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <path d={isOpen ? "m6 6 12 12M6 18 18 6" : "M4 8h16M4 16h16"} />
-            </svg>
-          </button>
-        </div>
+            <path d={isOpen ? "m6 6 12 12M6 18 18 6" : "M4 8h16M4 16h16"} />
+          </svg>
+        </button>
         <nav
           id="primary-navigation"
           aria-label="Main navigation"
@@ -86,6 +84,9 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
+        <div className={styles.themeControl}>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
