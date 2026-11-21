@@ -1,51 +1,6 @@
-import type { ReactNode } from "react";
 import Image from "next/image";
 import { profile } from "@/data/profile";
-import { experience, education, certificates } from "@/data/background";
-
-function DetailList({
-  items,
-}: {
-  items: readonly { title: string; detail: string }[];
-}) {
-  return (
-    <dl className="about-detail-list">
-      {items.map((item) => (
-        <div key={item.title}>
-          <dt>{item.title}</dt>
-          <dd>{item.detail}</dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
-function BackgroundDetail({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <details>
-      <summary>
-        {title}
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          aria-hidden="true"
-        >
-          <path d="M5 12h14M12 5v14" />
-        </svg>
-      </summary>
-      <div className="about-extra-content">{children}</div>
-    </details>
-  );
-}
+import { experience, education } from "@/data/background";
 export function AboutContent() {
   return (
     <>
@@ -96,18 +51,14 @@ export function AboutContent() {
                 <div>
                   <h3>{item.qualification}</h3>
                   <p className="education-meta">
-                    {item.institution} <span>· {item.dates}</span>
+                    {item.institution} · {item.dates}
                   </p>
+                  <p className="education-detail">{item.detail}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
-      </div>
-      <div className="about-extras" aria-label="More background details">
-        <BackgroundDetail title="Certificates">
-          <DetailList items={certificates} />
-        </BackgroundDetail>
       </div>
     </>
   );

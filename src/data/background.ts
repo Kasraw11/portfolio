@@ -36,13 +36,16 @@ export const education = [
   {
     qualification: "Master of Information Technology",
     institution: "Monash University",
-    dates: "2025–2026 (expected)",
+    dates: "February 2025 – December 2026 (expected)",
+    detail:
+      "Melbourne, Australia · Capstone: PathFolio, career guidance and planning for young Australians.",
     logo: "/images/education/monash-university.webp",
   },
   {
     qualification: "Bachelor of Computer Engineering",
     institution: "Islamic Azad University",
     dates: "2017–2022",
+    detail: "Shiraz, Iran · Specialised in software engineering",
     logo: "/images/education/islamic-azad-university-shiraz.webp",
   },
 ] as const;
@@ -60,16 +63,6 @@ export const otherTools = [
   "Adobe Photoshop",
   "Adobe Premiere",
   "Adobe Lightroom",
-] as const;
-export const certificates = [
-  {
-    title: "Java programming",
-    detail: "Industrial Management Organization · 2020",
-  },
-  {
-    title: "Python programming",
-    detail: "Industrial Management Organization · 2021",
-  },
 ] as const;
 export const personalInterests = [
   {
