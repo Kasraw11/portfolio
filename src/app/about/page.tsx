@@ -5,9 +5,8 @@ import { AboutContent } from "@/components/about/background-sections";
 import { PageIntro } from "@/components/ui/page-intro";
 
 export const metadata: Metadata = {
-  title: "About & Skills — Kasra",
-  description:
-    "Kasra’s background, education, interests, and technology toolkit.",
+  title: "About — Kasra",
+  description: "Kasra’s background, experience, and education.",
 };
 
 export default function AboutPage() {
